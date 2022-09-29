@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 
 use App\Models\User;
+use App\Mail\OtpMail;
+use App\Models\Chequedetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\OtpMail;
 
 class AuthController extends Controller
 {
@@ -25,6 +26,10 @@ class AuthController extends Controller
 
     public function email() {
         return view('email');
+    }
+
+    public function dashboard() {
+        return view('dashboard');
     }
 
     public function recaptcha(Request $request)
@@ -114,7 +119,7 @@ class AuthController extends Controller
                 $user->verification_code = null;
                 $user->verified = true;
                 $user->update();    
-                    return redirect('admindashboard');     
+                    return redirect('dashboard');     
             }
             
             else {
@@ -122,10 +127,43 @@ class AuthController extends Controller
             }  
         }
         else {
-            return redirect('adminlogin')->with('fail','You have been logged out. Please try again');
+            return redirect('login')->with('fail','You have been logged out. Please try again');
         }
            
            
+    }
+
+    public function store(Request $request) {
+
+        
+            $chequedetail = new Chequedetail; 
+            $chequedetail->depositdate = $request->depositdate;
+            $chequedetail->payto = $request->payto;
+            $chequedetail->amount = $request->amount;
+            $chequedetail->accountholdername = $request->accountholdername;
+            $chequedetail->accountholdernumber = $request->accountholdernumber;
+            $chequedetail->chequenumber = $request->chequenumber;
+            $chequedetail->bankcode = $request->bankcode;
+            $chequedetail->branchcode = $request->branchcode;
+
+            if($request->file('image')){
+                $file= $request->file('image');
+                $filename= date('YmdHi').$file->getClientOriginalName();
+                $file-> move(public_path('public/Image'), $filename);
+                $chequedetail->image = $filename;
+            }
+     
+        $res = $chequedetail->save();
+
+            
+
+        if($res) {
+            return back()->with('success',"Cheque details added");
+        }
+
+        else {
+            return back()->with('fail',"Something went wrong");
+        }
     }
 
 }

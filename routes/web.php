@@ -20,15 +20,19 @@ Route::get('/', function () {
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
 
-Route::get('/register',[AuthController::class,'register'])->name('register');
+// Route::get('/register',[AuthController::class,'register'])->name('register');
 
 Route::get('/',[AuthController::class,'index'])->name('index');
 
 Route::get('/email',[AuthController::class,'email'])->name('email');
 
+Route::get('/dashboard',[AuthController::class,'dashboard'])->name('dashboard');
+
 Route::post('/recaptcha',[AuthController::class,'recaptcha'])->name('recaptcha');
 
-Route::post('/registeruser',[AuthController::class,'registeruser'])->name('registeruser');
+Route::post('/store',[AuthController::class,'store'])->name('store');
+
+// Route::post('/registeruser',[AuthController::class,'registeruser'])->name('registeruser');
 
 Route::post('loginuser',[AuthController::class,'loginuser'])->name('loginuser');
 
