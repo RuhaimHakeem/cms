@@ -194,7 +194,7 @@ License: For each use you must have a valid license purchased only from above li
                                     data-kt-menu="true">
 
                                     <div class="menu-item px-5">
-                                        <form action="#" method="POST">
+                                        <form action="/logout" method="POST">
                                             @csrf
                                             <button type="submit" class="menu-link px-5 mx-4 btn btn-light">Sign
                                                 Out</button>
@@ -227,7 +227,7 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Logo-->
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
-                        <a href="/home">
+                        <a href="/chequedetails">
                             <img alt="Logo" src="../media/logos/edgelogo.png" class="h-35px app-sidebar-logo-default" />
                             <img alt="Logo" src="../media/logos/edge.png" class="h-30px app-sidebar-logo-minimize" />
                         </a>
@@ -293,11 +293,11 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin:Menu item-->
                                         <div class="menu-item">
                                             <!--begin:Menu link-->
-                                            <a class="menu-link @yield('home_select')" href="/home">
+                                            <a class="menu-link @yield('home_select')" href="/chequedetails">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Home</span>
+                                                <span class="menu-title">Details</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>

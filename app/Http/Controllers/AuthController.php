@@ -9,6 +9,7 @@ use App\Models\Chequedetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -30,6 +31,24 @@ class AuthController extends Controller
 
     public function dashboard() {
         return view('dashboard');
+    }
+
+    public function chequedetails() {
+
+        $chequedetails = Chequedetail::all();
+        
+        return view('chequedetails', [
+            'chequedetails' => $chequedetails,
+        ]);
+    }
+
+    public function chequedetail($id) {
+
+        $chequedetail = Chequedetail::where('id','=', $id)->first();
+        
+        return view('chequedetail', [
+            'chequedetail' => $chequedetail,
+        ]);
     }
 
     public function recaptcha(Request $request)
@@ -87,6 +106,7 @@ class AuthController extends Controller
                 $request->session()->put('loginId',$user->id);
 
                 $pin = mt_rand(1000000, 9999999);
+                $user->verified = true;
                 $user->verification_code = $pin;
                 $user->save();
 
@@ -119,7 +139,7 @@ class AuthController extends Controller
                 $user->verification_code = null;
                 $user->verified = true;
                 $user->update();    
-                    return redirect('dashboard');     
+                    return redirect('/chequedetails');     
             }
             
             else {
@@ -164,6 +184,22 @@ class AuthController extends Controller
 
         else {
             return back()->with('fail',"Something went wrong");
+        }
+    }
+
+    public function logout(){
+
+        $userId = Session::get('loginId');;
+    
+        $user = User::where('id','=', $userId)->first();
+    
+        if(Session::has('loginId')){
+            $user->verified = false;
+            $user->update();
+            Session::pull('loginId');
+            Session::forget('loginId');
+    
+            return redirect('login');
         }
     }
 

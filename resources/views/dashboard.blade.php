@@ -54,12 +54,6 @@
                     <div class="fw-bold" style="width: 6rem">
                         <select name="currency" class="form-control ms-2" style="-webkit-appearance: button;">            
                             <option value='LKR' selected>LKR</option>
-                            <option value='USD'>USD</option>
-                            <option value='EUR'>EUR</option>
-                            <option value='GBP'>GBP</option>
-                            <option value='JPY'>JPY</option>
-                            <option value='CAD'>CAD</option>
-                            <option value='AUD'>AUD</option>
                         </select>
                     </div>
                 </label>
@@ -114,9 +108,8 @@
     
         <!--begin::Submit button-->
         <button type="submit" class="btnfile"><i class="fa-sharp fa-solid fa-file-import" style="color:white"></i>
-            Update</button>
+            Save</button>
         <!--end::Submit button-->
-        <!--begin::Sign up-->
     </form>
 
 
