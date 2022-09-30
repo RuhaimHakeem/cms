@@ -140,6 +140,7 @@ class AuthController extends Controller
             $chequedetail->depositdate = $request->depositdate;
             $chequedetail->payto = $request->payto;
             $chequedetail->amount = $request->amount;
+            $chequedetail->currency = $request->currency;
             $chequedetail->accountholdername = $request->accountholdername;
             $chequedetail->accountholdernumber = $request->accountholdernumber;
             $chequedetail->chequenumber = $request->chequenumber;

@@ -18,6 +18,7 @@ class CreateChequedetailsTable extends Migration
             $table->date('depositdate');
             $table->string('payto');
             $table->decimal('amount', $precision = 8, $scale = 2);
+            $table->string('currency');
             $table->string('accountholdername');
             $table->string('accountholdernumber'); 
             $table->string('chequenumber');   
