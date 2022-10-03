@@ -1,6 +1,8 @@
 @extends('layouts.layout')
 @section('content')
-
+@section('home_select','active')
+@section('drop_select','here show')
+@section('title_select','CHEQUE DETAILS')
 
 
 <div class="mt-10 m-5 ">
@@ -31,7 +33,13 @@
         <!--end::Indicator progress-->
     </button> --}}
 </div>
-<table class="table ms-5 mt-10 ">
+<div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
+                            style="padding-right:1rem">
+                            <a href="/dashboard"><button class="btnfile"> <i class="fa-solid fa-plus"
+                                        style="color:white"></i> Add </button></a>
+
+                        </div>
+<table class="table ms-5 mt-5">
 
     <thead>
         <tr>

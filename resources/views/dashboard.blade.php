@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 @section('content')
+@section('add_select','active')
+@section('drop_select','here show')
+@section('title_select','ADD')
 {{-- @section('title_select','Lead Update') --}}
 
 <div id="kt_app_content" class="app-content flex-column-fluid col-6 col-sm-6  col-md-3 col-lg-3 col-xl-3 col-xxl-3">

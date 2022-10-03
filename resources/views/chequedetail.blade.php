@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-
+@section('title_select','CHEQUE VIEW')
 <div>
 <!-- <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->

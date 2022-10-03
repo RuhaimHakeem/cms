@@ -15,7 +15,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
     <base href="../../../">
-    <title>EDGE</title>
+    <title>CMS</title>
     <meta charset="utf-8" />
     <meta name="description"
         content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -81,7 +81,7 @@ License: For each use you must have a valid license purchased only from above li
                             </center>
                             <div class="text-center mb-6">
 
-                                <h1 class="text-dark fw-bolder mb-3" style="font-size:40px">EDGE</h1>
+                                <h1 class="text-dark fw-bolder mb-3" style="font-size:40px">CMS</h1>
 
                             </div>
                             <!--begin::Heading-->
@@ -134,7 +134,7 @@ License: For each use you must have a valid license purchased only from above li
                         <img alt="Logo" src="../media/logos/prag.png" class="h-15px" style="margin-right:0.2rem" />
                         <p class="mb-0 fw-semibold" target="_blank">Engineered by PragICTS | </p>
                     </div>
-                    <p class="mb-0 fw-semibold h-1px" target="_blank">https://pragicts.com | edge@pragicts.com</p>
+                    <p class="mb-0 fw-semibold h-1px" target="_blank">https://pragicts.com </p>
                 </footer>
                 <!--end::Form-->
                 <!--begin::Footer-->
