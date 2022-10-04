@@ -71,6 +71,11 @@
                         value.leadid +
                         '"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         View</button></a>
+
+                <a target="_blank" style="margin-right:3rem;margin-left:3rem" href="/updatechequedetail/{{$chequedetail->id}}' +
+                        value.leadid +
+                        '"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
+                        Update</button></a>
             </td>
         </tr>
         @endforeach

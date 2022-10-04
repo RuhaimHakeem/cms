@@ -33,6 +33,48 @@ class AuthController extends Controller
         return view('dashboard');
     }
 
+    public function updatechequedetail($id) {
+        $chequedetail = Chequedetail::where('id','=', $id)->first();
+
+        return view('updatechequedetail', [
+            'chequedetail' => $chequedetail,
+        ]);
+    }
+
+    public function updatecheque(Request $request, $id) {
+        
+            $chequedetail =  Chequedetail::where('id','=', $id)->first();
+            $chequedetail->depositdate = $request->depositdate;
+            $chequedetail->payto = $request->payto;
+            $chequedetail->amount = $request->amount;
+            $chequedetail->currency = $request->currency;
+            $chequedetail->accountholdername = $request->accountholdername;
+            $chequedetail->accountholdernumber = $request->accountholdernumber;
+            $chequedetail->chequenumber = $request->chequenumber;
+            $chequedetail->bankcode = $request->bankcode;
+            $chequedetail->branchcode = $request->branchcode;
+
+            if($request->file('image')){
+                $file= $request->file('image');
+                $filename= date('YmdHi').$file->getClientOriginalName();
+                $file-> move(public_path('public/Image'), $filename);
+                $chequedetail->image = $filename;
+            }
+     
+        $res = $chequedetail->update();
+
+            
+
+        if($res) {
+            return back()->with('success',"Cheque details updated");
+        }
+
+        else {
+            return back()->with('fail',"Something went wrong");
+        }
+    }
+    
+
     public function chequedetails() {
 
         $chequedetails = Chequedetail::all();

@@ -32,6 +32,10 @@ Route::get('/chequedetails',[AuthController::class,'chequedetails'])->name('cheq
 
 Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('chequedetail')->middleware('isLoggedIn');
 
+Route::get('/updatechequedetail/{id}',[AuthController::class,'updatechequedetail'])->name('updatechequedetail')->middleware('isLoggedIn');
+
+Route::post('/updatecheque/{id}',[AuthController::class,'updatecheque'])->name('updatecheque');
+
 Route::post('/recaptcha',[AuthController::class,'recaptcha'])->name('recaptcha');
 
 Route::post('/store',[AuthController::class,'store'])->name('store');
