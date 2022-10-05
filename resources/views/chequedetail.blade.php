@@ -14,7 +14,7 @@
         </div>
 
 
-        <table class="table mt-10 caption-top" style="max-width: 300px">
+        <table class="table mt-10 caption-top" style="max-width: 800px">
             <thead>
                 <tr>
                     <th id="th">Deposit Date</th>
@@ -51,22 +51,60 @@
                 </tr>
 
                 <tr>
-                    <th style="margin-bottom: 2rem" id="th">Image</th>
-                    <td></td>
+                    <th style="margin-bottom: 2rem" id="th" class="align-middle">Image</th>
+                    <td>  <div class="d-flex w-25 mt-5">
+
+                        
+                        <div>
+                        <img class="tea-map-img" id="myImg" src="{{ url('public/Image/'.$chequedetail->image) }}"
+                        style="height: 200px; width: 400px;" />
+                          
+                          <!-- The Modal -->
+                          <div id="myModal" class="modal">
+                            <img class="modal-content" id="img01">
+                          </div>
+                          <script>
+                                // Get the modal
+                                var modal = document.getElementById('myModal');
+                                
+                                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                                var img = document.getElementById('myImg');
+                                var modalImg = document.getElementById("img01");
+                                var captionText = document.getElementById("caption");
+                                img.onclick = function(){
+                                    modal.style.display = "block";
+                                    modalImg.src = this.src;
+                                    modalImg.alt = this.alt;
+                                    captionText.innerHTML = this.alt;
+                                }
+                                
+                                
+                                // When the user clicks on <span> (x), close the modal
+                                modal.onclick = function() {
+                                    img01.className += " out";
+                                    setTimeout(function() {
+                                       modal.style.display = "none";
+                                       img01.className = "modal-content";
+                                     }, 400);
+                                    
+                                 }    
+                                    
+                                </script>
+                        </div>
+        </div></td>
                 </tr>
 
             </thead>
 
         </table>
-        <div class="d-flex w-25 mt-5">
-            <label class="me-6 m-4 p-5 " style="width: 10px; background-color: #e4e4e4;" for="">Cheque Image</label>
-
-        <img src="{{ url('public/Image/'.$chequedetail->image) }}"
-                        style="height: 100px; width: 150px;">
-        </div>
+      
 
     </div>
 </div>
 
 
 @endsection
+
+
+
+

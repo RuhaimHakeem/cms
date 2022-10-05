@@ -45,9 +45,9 @@
         <tr>
             <th id="th" scope="col">Account Holder Name</th>
             <th id="th" scope="col">Paid To</th>
-            <th id="th" scope="col">Deposit Date</th>
+            <th id="th" scope="col">Bank Code</th>
             <th id="th" scope="col">Amount</th>
-            <th id="th" scope="col">Cheque Number</th>
+            <th id="th" scope="col">Deposit Date</th>
             <th id="th" scope="col"></th>
 
 
@@ -64,9 +64,9 @@
             @else
             <td>NULL</td>
             @endif --}}
-            <td>{{$chequedetail->depositdate}}</td>
+            <td>{{$chequedetail->bankcode}}</td>
             <td>{{$chequedetail->amount}}</td>
-            <td>{{$chequedetail->chequenumber}}</td>
+            <td>{{$chequedetail->depositdate}}</td>
             <td style="text-align:center ;">
                 <a target="_blank" style="margin-right:3rem;" href="/chequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         View</button></a>

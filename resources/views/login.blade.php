@@ -15,7 +15,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <head>
     <base href="../../../">
-    <title>CMS | LOGIN</title>
+    <title>CHEQUE | LOGIN</title>
     <meta charset="utf-8" />
     <meta name="description"
         content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Blazor, Django, Flask &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -83,11 +83,11 @@ License: For each use you must have a valid license purchased only from above li
                             @endif
                             @csrf
                             <center>
-                                <img alt="Logo" src="../media/logos/edge.png" class="h-75px " />
+                                <img alt="Logo" src="../media/logos/cheque.png" class="h-75px " />
                             </center>
                             <div class="text-center mb-10">
                                 <!--begin::Title-->
-                                <h1 class="text-dark fw-bolder mb-3" style="font-size:40px">CMS</h1>
+                                <h1 class="text-dark fw-bolder mb-3" style="font-size:40px">CHEQUE</h1>
                                 <h2 style="font-size:20px">Login</h2>
                                 <div id="ct"></div>
                                 <script type="text/javascript">
