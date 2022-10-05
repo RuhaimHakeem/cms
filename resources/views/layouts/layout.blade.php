@@ -104,7 +104,7 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                         <a href="dashboardnew" class="d-lg-none">
-                            <img alt="Logo" src="../media/logos/edge.png" class="h-40px" />
+                            <img alt="Logo" src="../media/logos/cheque.png" class="h-40px" />
 
                         </a>
                     </div>
@@ -231,7 +231,7 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Logo image-->
                         <a href="/chequedetails">
                             <img alt="Logo" src="../media/logos/cmslogo.png" class="h-35px app-sidebar-logo-default" />
-                            <img alt="Logo" src="../media/logos/edge.png" class="h-30px app-sidebar-logo-minimize" />
+                            <img alt="Logo" src="../media/logos/cheque.png" class="h-30px app-sidebar-logo-minimize" />
                         </a>
                         <!--end::Logo image-->
                         <!--begin::Sidebar toggle-->
