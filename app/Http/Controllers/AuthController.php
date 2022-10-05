@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class AuthController extends Controller
 {
@@ -31,6 +32,24 @@ class AuthController extends Controller
 
     public function dashboard() {
         return view('dashboard');
+    }
+
+    public function fetchtransaction(Request $request) {
+    
+        $from = date('Y-m-d', strtotime($request->from));
+        $to = date('Y-m-d', strtotime($request->to));
+        
+        if($from && $to){
+            $data['cheque'] = DB::table('chequedetails')
+            ->whereBetween('depositdate', [$from, $to])     
+            ->get();
+        }
+        else {
+            $data['cheque'] = DB::table('chequedetails')     
+            ->get();
+        }
+        return response()->json($data);
+
     }
 
     public function updatechequedetail($id) {
@@ -78,6 +97,8 @@ class AuthController extends Controller
     public function chequedetails() {
 
         $chequedetails = Chequedetail::all();
+
+           
         
         return view('chequedetails', [
             'chequedetails' => $chequedetails,

@@ -48,7 +48,7 @@
 
         <div class="fv-row mb-8 d-flex align-items-center">
            
-            <input required type="text" style="width: 10rem" placeholder="Amount" name="amount" autocomplete="off" class="form-control bg-transparent"
+            <input required type="text" style="width: 10rem" placeholder="Enter Amount" name="amount" autocomplete="off" class="form-control bg-transparent"
                 value={{old('amount')}}>
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
 
@@ -65,7 +65,7 @@
 
         <div class="fv-row mb-8">
             
-            <input required type="text" placeholder="Account Holder Name" name="accountholdername" autocomplete="off"
+            <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
                 class="form-control bg-transparent" value={{old('accountholdername')}} >
             <span class="text-danger">@error('accountholdername') {{$message}} @enderror</span>
             
@@ -73,7 +73,7 @@
 
         <div class="fv-row mb-8">
            
-            <input required type="text" placeholder="Account Holder Number" name="accountholdernumber" autocomplete="off"
+            <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
                 class="form-control bg-transparent" value={{old('accountholdernumber')}}>
             <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>
            
@@ -81,7 +81,7 @@
 
         <div class="fv-row mb-8 d-flex align-items-center">
            
-            <input required type="text" placeholder="Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
+            <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
                 value={{old('chequenumber')}} >
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
            
@@ -89,7 +89,7 @@
 
         <div class="fv-row mb-8">
            
-            <input required type="text" placeholder="Bank Code" name="bankcode" autocomplete="off"
+            <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
                 class="form-control bg-transparent" value={{old('bankcode')}}>
             <span class="text-danger">@error('bankcode') {{$message}} @enderror</span>
           
@@ -97,7 +97,7 @@
 
         <div class="fv-row mb-8">
             
-            <input required type="text" placeholder="Branch Code" name="branchcode" autocomplete="off"
+            <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
                 class="form-control bg-transparent" value={{old('branchcode')}}>
             <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
             

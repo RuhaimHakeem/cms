@@ -3,6 +3,10 @@
     justify-content: space-between;
 }
 
+label {
+    width: 100% !important;
+}
+
 table {
     border: 1px solid #ccc !important;
     border-collapse: collapse !important;
@@ -20,7 +24,7 @@ table tr {
 table th,
 table td {
     padding: 0.625em !important;
-    text-align: left ;
+    text-align: left;
 }
 
 table th {
@@ -59,10 +63,6 @@ table th {
     }
 
     table td::before {
-        /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
         content: attr(data-label) !important;
         float: left !important;
         font-weight: bold !important;
@@ -97,26 +97,25 @@ table th {
     padding: 30px !important;
 }
 
-#th{
-    font-weight:bold;
+#th {
+    font-weight: bold;
 }
 
 .btnfile {
-    background-color: DodgerBlue ;
+    background-color: DodgerBlue;
     border: none !important;
     color: white !important;
     padding: 8px 14px !important;
     font-size: 14px !important;
     cursor: pointer !important;
     border-radius: 0.5rem;
-  }
-  .btnback {
-    background-color: DodgerBlue ;
+}
+.btnback {
+    background-color: DodgerBlue;
     border: none !important;
     color: white !important;
     padding: 4px 10px !important;
     font-size: 10px !important;
     cursor: pointer !important;
     border-radius: 0.5rem;
-
-  }
+}

@@ -14,7 +14,7 @@
     <!--begin::Subtitle-->
 
     <!--end::Subtitle=-->
-    {{-- <div class="d-flex">
+    <div class="d-flex">
         <div class="d-flex fv-row mb-8 w-25 ">
             <label class="me-6 form-control bg-transparent" style="width:5rem;font-weight:bold" for="">From</label>
             <input class="form-control bg-transparent" type="date" id="from" name="from">
@@ -31,7 +31,7 @@
         <!--end::Indicator label-->
         <!--begin::Indicator progress-->
         <!--end::Indicator progress-->
-    </button> --}}
+    </button>
 </div>
 <div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
                             style="padding-right:1rem">
@@ -45,6 +45,7 @@
         <tr>
             <th id="th" scope="col">Account Holder Name</th>
             <th id="th" scope="col">Paid To</th>
+            <th id="th" scope="col">Deposit Date</th>
             <th id="th" scope="col">Amount</th>
             <th id="th" scope="col">Cheque Number</th>
             <th id="th" scope="col"></th>
@@ -63,18 +64,14 @@
             @else
             <td>NULL</td>
             @endif --}}
-           
-            <td>{{$chequedetail->amount}} {{$chequedetail->currency}}</td>
+            <td>{{$chequedetail->depositdate}}</td>
+            <td>{{$chequedetail->amount}}</td>
             <td>{{$chequedetail->chequenumber}}</td>
             <td style="text-align:center ;">
-                <a target="_blank" style="margin-right:3rem;margin-left:3rem" href="/chequedetail/{{$chequedetail->id}}' +
-                        value.leadid +
-                        '"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
+                <a target="_blank" style="margin-right:3rem;" href="/chequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         View</button></a>
 
-                <a target="_blank" style="margin-right:3rem;margin-left:3rem" href="/updatechequedetail/{{$chequedetail->id}}' +
-                        value.leadid +
-                        '"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
+                <a target="_blank" href="/updatechequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         Update</button></a>
             </td>
         </tr>
@@ -82,4 +79,53 @@
     </tbody>
     @endif
 </table>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+
+$(document).ready(function(e) {
+
+    $('#search').on('click', function() {
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;   
+ 
+        if(from && to) {
+            $("table tbody").html('');
+            $.ajax({
+            url: "{{url('api/fetch-transaction')}}",
+            type: "POST",
+            data: {
+                from: from,
+                to: to,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function(result) {
+
+                console.log(result.cheque);
+
+                $.each(result.cheque, function(key, value) {
+
+                    var tr = '<tr> <td>' + value
+                        .accountholdername + ' </td> <td>' + value.payto + 
+                        ' </td>  <td>' + value.depositdate +
+                        '</td>  <td>' + value.amount +
+                        '</td> <td>' + value.chequenumber +
+                        '</td> <td style="text-align:center;"> <a style="margin-right:3rem; target="_blank" href="/chequedetail/' +
+                        value.id +
+                        '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> View</button></a> <a target="_blank" href="/updatechequedetail/' +
+                        value.id +
+                        '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> Update</button></a> </td>  </tr>'
+
+                    $("table tbody").append(tr);
+                });
+
+            }
+        });
+        }
+        
+    });
+});
+</script>
 @endsection

@@ -50,11 +50,20 @@
                     <td>{{$chequedetail->branchcode}}</td>
                 </tr>
 
+                <tr>
+                    <th style="margin-bottom: 2rem" id="th">Image</th>
+                    <td></td>
+                </tr>
+
             </thead>
 
         </table>
+        <div class="d-flex w-25 mt-5">
+            <label class="me-6 m-4 p-5 " style="width: 10px; background-color: #e4e4e4;" for="">Cheque Image</label>
 
-        </form>
+        <img src="{{ url('public/Image/'.$chequedetail->image) }}"
+                        style="height: 100px; width: 150px;">
+        </div>
 
     </div>
 </div>

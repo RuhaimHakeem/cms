@@ -47,3 +47,5 @@ Route::post('loginuser',[AuthController::class,'loginuser'])->name('loginuser');
 Route::post('email',[AuthController::class,'emailuser'])->name('emailuser');
 
 Route::post('logout',[AuthController::class,'logout'])->name('logout');
+
+Route::post('api/fetch-transaction', [AuthController::class, 'fetchtransaction']);
