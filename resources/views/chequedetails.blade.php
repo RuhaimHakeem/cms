@@ -39,6 +39,19 @@
                                         style="color:white"></i> Add </button></a>
 
                         </div>
+
+                        <label class="d-flex bg-transparent ">
+                            <div class="box fw-bold ">
+                    
+                                <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
+                                    <option value='All'>All</option>
+                                    <option value='in hand'>in hand</option>
+                                    <option value='deposited'>deposited</option>
+                                    <option value='inhand'>returned</option>         
+                                </select>
+                            </div>
+                        </label>
+
 <table class="table ms-5 mt-5">
 
     <thead>
@@ -48,6 +61,7 @@
             <th id="th" scope="col">Bank Code</th>
             <th id="th" scope="col">Amount</th>
             <th id="th" scope="col">Deposit Date</th>
+            <th id="th" scope="col">Status</th>
             <th id="th" scope="col" style="text-align: center">Actions</th>
 
 
@@ -67,6 +81,12 @@
             <td>{{$chequedetail->bankcode}}</td>
             <td>{{$chequedetail->amount}}</td>
             <td>{{$chequedetail->depositdate}}</td>
+            @if ($chequedetail->status)
+            <td>{{$chequedetail->status}}</td>
+            @else
+            <td>null</td>
+            @endif
+            
             <td style="text-align:center ;">
                 <a target="_blank" style="margin-right:1rem;" href="/chequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         View</button></a>
@@ -85,47 +105,69 @@
 <script>
 
 $(document).ready(function(e) {
-
+    
     $('#search').on('click', function() {
         var from = document.getElementById("from").value;
-        var to = document.getElementById("to").value;   
- 
+        var to = document.getElementById("to").value; 
+
         if(from && to) {
-            $("table tbody").html('');
-            $.ajax({
-            url: "{{url('api/fetch-transaction')}}",
-            type: "POST",
-            data: {
-                from: from,
-                to: to,
-                _token: '{{csrf_token()}}'
-            },
-            dataType: 'json',
-            success: function(result) {
-
-                console.log(result.cheque);
-
-                $.each(result.cheque, function(key, value) {
-
-                    var tr = '<tr> <td>' + value
-                        .accountholdername + ' </td> <td>' + value.payto + 
-                        ' </td>  <td>' + value.depositdate +
-                        '</td>  <td>' + value.amount +
-                        '</td> <td>' + value.chequenumber +
-                        '</td> <td style="text-align:center;"> <a style="margin-right:3rem; target="_blank" href="/chequedetail/' +
-                        value.id +
-                        '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> View</button></a> <a target="_blank" href="/updatechequedetail/' +
-                        value.id +
-                        '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> Update</button></a> </td>  </tr>'
-
-                    $("table tbody").append(tr);
-                });
-
-            }
-        });
+            fetchtransaction(from, to);
         }
         
+    }); 
+
+    $('#status').on('change', function() {
+        fetchtransaction();
     });
+
+        function fetchtransaction(from = '', to = '') {
+            var status = document.getElementById("status").value;
+
+            if(from && to) {
+                status = null;
+            }
+            else {
+                document.getElementById("from").value = "";
+                document.getElementById("to").value = "";
+            }
+
+            if(from && to || status) {
+                $("table tbody").html('');
+                $.ajax({
+                url: "{{url('api/fetch-transaction')}}",
+                type: "POST",
+                data: {
+                    from: from,
+                    to: to,
+                    status: status,
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function(result) {
+
+                    console.log(result.cheque);
+
+                    $.each(result.cheque, function(key, value) {
+
+                        var tr = '<tr> <td>' + value
+                            .accountholdername + ' </td> <td>' + value.payto + 
+                            ' </td>  <td>' + value.bankcode +
+                            '</td> <td>' + value.amount +
+                            '</td>  <td>' + value.depositdate +
+                            '</td> <td>' + value.status +
+                            '</td> <td style="text-align:center;"> <a style="margin-right:3rem; target="_blank" href="/chequedetail/' +
+                            value.id +
+                            '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> View</button></a> <a target="_blank" href="/updatechequedetail/' +
+                            value.id +
+                            '"> <button type="submit" form="form2" class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i> Update</button></a> </td>  </tr>'
+
+                        $("table tbody").append(tr);
+                    });
+
+                }
+            });
+            }
+        }
 });
 </script>
 @endsection

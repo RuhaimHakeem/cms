@@ -87,6 +87,8 @@
            
         </div>
 
+       
+
         <div class="fv-row mb-8">
            
             <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
@@ -101,6 +103,24 @@
                 class="form-control bg-transparent" value={{old('branchcode')}}>
             <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
             
+        </div>
+
+        <label class=" m-1">Update Status :</label>
+
+        <div class="fv-row mb-8">
+            <div class="d-flex">
+                <div class="form-group">
+                    <label class="bg-transparent ">
+                        <div class="box fw-bold ">
+                            <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
+                                <option value='in hand'>in hand</option>
+                                <option value='deposited'>deposited</option>
+                                <option value='inhand'>returned</option>         
+                            </select>
+                        </div>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div class="fv-row mb-8">

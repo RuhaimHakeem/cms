@@ -102,6 +102,22 @@
         </div>
 
         <div class="fv-row mb-8">
+            <div class="d-flex">
+                <div class="form-group">
+                    <label class="bg-transparent ">
+                        <div class="box fw-bold ">
+                            <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
+                                <option value='in hand'>In Hand</option>
+                                <option value='deposited'>deposited</option>
+                                <option value='inhand'>returned</option>         
+                            </select>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="fv-row mb-8">
             <label><h4>Picture Of Cheque</h4></label>
             <input type="file" name="image" class="form-control" >
         </div>

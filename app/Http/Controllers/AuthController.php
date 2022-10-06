@@ -41,13 +41,26 @@ class AuthController extends Controller
         
         if($from && $to){
             $data['cheque'] = DB::table('chequedetails')
+            ->orderBy('created_at', 'desc')
             ->whereBetween('depositdate', [$from, $to])     
             ->get();
         }
-        else {
-            $data['cheque'] = DB::table('chequedetails')     
-            ->get();
+
+        if($request->status) {
+            if($request->status == 'All') {
+                $data['cheque'] = DB::table('chequedetails')
+                ->orderBy('created_at', 'desc')
+                ->get();
+            }
+    
+            else {
+                $data['cheque'] = DB::table('chequedetails')
+                ->where('status', '=',  $request->status )
+                ->orderBy('created_at', 'desc')
+                ->get();
+            }
         }
+        
         return response()->json($data);
 
     }
@@ -72,6 +85,7 @@ class AuthController extends Controller
             $chequedetail->chequenumber = $request->chequenumber;
             $chequedetail->bankcode = $request->bankcode;
             $chequedetail->branchcode = $request->branchcode;
+            $chequedetail->status = $request->status;
 
             if($request->file('image')){
                 $file= $request->file('image');
@@ -96,9 +110,7 @@ class AuthController extends Controller
 
     public function chequedetails() {
 
-        $chequedetails = Chequedetail::all();
-
-           
+        $chequedetails = Chequedetail::orderBy('created_at', 'desc')->get();   
         
         return view('chequedetails', [
             'chequedetails' => $chequedetails,
@@ -229,13 +241,19 @@ class AuthController extends Controller
             $chequedetail->chequenumber = $request->chequenumber;
             $chequedetail->bankcode = $request->bankcode;
             $chequedetail->branchcode = $request->branchcode;
+            $chequedetail->status = $request->status;
 
-            if($request->file('image')){
+             if($request->file('image')){
                 $file= $request->file('image');
                 $filename= date('YmdHi').$file->getClientOriginalName();
                 $file-> move(public_path('public/Image'), $filename);
                 $chequedetail->image = $filename;
-            }
+
+                // $destination =  "/xampp/htdocs/cms/cms/public/public/Image" 
+            } 
+
+               
+          
      
         $res = $chequedetail->save();
 
