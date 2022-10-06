@@ -48,7 +48,7 @@
             <th id="th" scope="col">Bank Code</th>
             <th id="th" scope="col">Amount</th>
             <th id="th" scope="col">Deposit Date</th>
-            <th id="th" scope="col"></th>
+            <th id="th" scope="col">Actions</th>
 
 
         </tr>
