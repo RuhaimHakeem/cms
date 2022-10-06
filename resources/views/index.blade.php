@@ -62,7 +62,7 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Theme mode setup on page load-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root" id="kt_app_root"
-        style="background-image: url(../media/misc/lmp-backgroundnew.jpg);background-size: cover;">
+        style="background-image: url(../media/misc/cms-background.jpg);background-size: cover;">
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
             <!--begin::Body-->

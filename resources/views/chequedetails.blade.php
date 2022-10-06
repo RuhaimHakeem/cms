@@ -16,12 +16,12 @@
     <!--end::Subtitle=-->
     <div class="d-flex">
         <div class="d-flex fv-row mb-8 w-25 ">
-            <label class="me-6 form-control bg-transparent" style="width:5rem;font-weight:bold" for="">From</label>
+            <label class="me-6 form-control bg-transparent" style="width:5rem !important;font-weight:bold" for="">From</label>
             <input class="form-control bg-transparent" type="date" id="from" name="from">
         </div>
 
         <div class="d-flex fv-row mb-8 w-25">
-            <label class="me-6 form-control bg-transparent mx-5" style="width:5rem;font-weight:bold" for="">To</label>
+            <label class="me-6 form-control bg-transparent mx-5" style="width:5rem !important;font-weight:bold" for="">To</label>
             <input class="form-control bg-transparent " type="date" id="to" name="to">
         </div>
     </div>
@@ -33,24 +33,25 @@
         <!--end::Indicator progress-->
     </button>
 </div>
-<div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
+<label class="d-flex bg-transparent ">
+                            <div class="box fw-bold ">
+                    
+                                <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
+                                    <option value='All'>All</option>
+                                    <option value='In Hand'>In Hand</option>
+                                    <option value='Deposited'>Deposited</option>
+                                    <option value='Returned'>Returned</option>         
+                                </select>
+                            </div>
+                        </label>
+                        <div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
                             style="padding-right:1rem">
                             <a href="/dashboard"><button class="btnfile"> <i class="fa-solid fa-plus"
                                         style="color:white"></i> Add </button></a>
 
                         </div>
 
-                        <label class="d-flex bg-transparent ">
-                            <div class="box fw-bold ">
-                    
-                                <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
-                                    <option value='All'>All</option>
-                                    <option value='in hand'>in hand</option>
-                                    <option value='deposited'>deposited</option>
-                                    <option value='inhand'>returned</option>         
-                                </select>
-                            </div>
-                        </label>
+                      
 
 <table class="table ms-5 mt-5">
 

@@ -16,6 +16,10 @@
 
         <table class="table mt-10 caption-top" style="max-width: 800px">
             <thead>
+            <tr>
+                    <th id="th">Status</th>
+                    <td>{{$chequedetail->status}}</td>
+                </tr>
                 <tr>
                     <th id="th">Deposit Date</th>
                     <td>{{date('m-d-Y', strtotime($chequedetail->depositdate))}}</td>

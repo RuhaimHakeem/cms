@@ -64,7 +64,7 @@ License: For each use you must have a valid license purchased only from above li
     <!--end::Theme mode setup on page load-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root" id="kt_app_root"
-        style="background-image: url(../media/misc/lmp-backgroundnew.jpg);background-size: cover;">
+        style="background-image: url(../media/misc/cms-background.jpg);background-size: cover;">
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-lg-row flex-column-fluid">
             <!--begin::Body-->
@@ -172,7 +172,7 @@ License: For each use you must have a valid license purchased only from above li
                         <img alt="Logo" src="../media/logos/prag.png" class="h-15px" style="margin-right:0.2rem" />
                         <p class="mb-0 fw-semibold" target="_blank">Engineered by PragICTS | </p>
                     </div>
-                    <p class="mb-0 fw-semibold h-1px" target="_blank">https://pragicts.com | edge@pragicts.com</p>
+                    <p class="mb-0 fw-semibold h-1px" target="_blank">https://pragicts.com </p>
                 </footer>
 
                 <!--end::Links-->

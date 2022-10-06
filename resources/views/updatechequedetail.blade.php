@@ -29,7 +29,22 @@
 
         <!--end::Separator-->
         <!--begin::Input group=-->    
-
+        <div class="fv-row mb-8">
+            <div class="d-flex">
+                <div class="form-group">
+                    <label class="bg-transparent ">
+                        <div class="box fw-bold ">
+                        <label class="me-6"  for="">Status Update :</label>
+                            <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
+                                <option value='In Hand'>In Hand</option>
+                                <option value='Deposited'>Deposited</option>
+                                <option value='Returned'>Returned</option>         
+                            </select>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
         <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent"  for="">Deposit Date</label>
             <input required class="form-control bg-transparent" type="date"  name="depositdate" value={{$chequedetail->depositdate}}>
@@ -101,21 +116,7 @@
             
         </div>
 
-        <div class="fv-row mb-8">
-            <div class="d-flex">
-                <div class="form-group">
-                    <label class="bg-transparent ">
-                        <div class="box fw-bold ">
-                            <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
-                                <option value='in hand'>In Hand</option>
-                                <option value='deposited'>deposited</option>
-                                <option value='inhand'>returned</option>         
-                            </select>
-                        </div>
-                    </label>
-                </div>
-            </div>
-        </div>
+    
 
         <div class="fv-row mb-8">
             <label><h4>Picture Of Cheque</h4></label>
