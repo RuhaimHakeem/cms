@@ -68,7 +68,7 @@
             <td>{{$chequedetail->amount}}</td>
             <td>{{$chequedetail->depositdate}}</td>
             <td style="text-align:center ;">
-                <a target="_blank" style="margin-right:3rem;" href="/chequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
+                <a target="_blank" style="margin-right:1rem;" href="/chequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
                         View</button></a>
 
                 <a target="_blank" href="/updatechequedetail/{{$chequedetail->id}}"><button class="btnfile"><i class="fa-solid fa-file-circle-check" style="color:white"></i>
