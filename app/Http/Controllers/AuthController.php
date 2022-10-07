@@ -230,7 +230,10 @@ class AuthController extends Controller
 
     public function store(Request $request) {
 
-        
+        if(!is_numeric($request->amount)) {
+            return back()->with('fail',"Amount should only contain numbers");
+        }
+        else {
             $chequedetail = new Chequedetail; 
             $chequedetail->depositdate = $request->depositdate;
             $chequedetail->payto = $request->payto;
@@ -243,7 +246,7 @@ class AuthController extends Controller
             $chequedetail->branchcode = $request->branchcode;
             $chequedetail->status = $request->status;
 
-             if($request->file('image')){
+            if($request->file('image')){
                 $file= $request->file('image');
                 $filename= date('YmdHi').$file->getClientOriginalName();
                 $file-> move(public_path('public/Image'), $filename);
@@ -251,15 +254,12 @@ class AuthController extends Controller
 
                 // $destination =  "/xampp/htdocs/cms/cms/public/public/Image" 
             } 
-
-               
-          
-     
-        $res = $chequedetail->save();
+            $res = $chequedetail->save();
+        }        
 
             
 
-        if($res) {
+        if(isset($res)) {
             return back()->with('success',"Cheque details added");
         }
 
