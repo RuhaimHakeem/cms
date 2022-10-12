@@ -48,4 +48,6 @@ Route::post('email',[AuthController::class,'emailuser'])->name('emailuser');
 
 Route::post('logout',[AuthController::class,'logout'])->name('logout');
 
-Route::post('api/fetch-transaction', [AuthController::class, 'fetchtransaction']);
+// Route::post('api/fetch-transaction', [AuthController::class, 'fetchtransaction']);
+
+Route::get('chequedetails', [AuthController::class, 'details'])->name('cheque.details');

@@ -7,73 +7,6 @@ label {
     width: 100% !important;
 }
 
-table {
-    border: 1px solid #ccc !important;
-    border-collapse: collapse !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 90% !important;
-}
-
-table tr {
-    background-color: #f8f8f8 !important;
-    border: 1px solid #ddd !important;
-    padding: 0.35em !important;
-}
-
-table th,
-table td {
-    padding: 0.625em !important;
-    text-align: left;
-}
-
-table th {
-    font-size: 0.85em !important;
-    letter-spacing: 0.1em !important;
-    text-transform: uppercase !important;
-}
-
-@media screen and (max-width: 600px) {
-    table {
-        border: 0 !important;
-    }
-
-    table thead {
-        border: none !important;
-        clip: rect(0 0 0 0) !important;
-        height: 1px !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        position: absolute !important;
-        width: 1px !important;
-    }
-
-    table tr {
-        border-bottom: 3px solid #ddd !important;
-        display: block !important;
-        margin-bottom: 0.625em !important;
-    }
-
-    table td {
-        border-bottom: 1px solid #ddd !important;
-        display: block !important;
-        font-size: 0.8em !important;
-        text-align: right !important;
-    }
-
-    table td::before {
-        content: attr(data-label) !important;
-        float: left !important;
-        font-weight: bold !important;
-        text-transform: uppercase !important;
-    }
-
-    table td:last-child {
-        border-bottom: 0 !important;
-    }
-}
-
 .box {
 }
 
@@ -91,14 +24,25 @@ table th {
     outline: none !important;
     border-radius: 5px !important;
 }
+table {
+    border-collapse: collapse !important;
+}
+
+table tr {
+    background-color: #f8f8f8 !important;
+    border: 1px solid #ddd !important;
+    padding: 0.35em !important;
+}
+
+tbody {
+    display: table-row-group !important;
+    vertical-align: middle !important;
+    border-color: inherit !important;
+}
 
 .box select option {
     border-radius: 5px !important;
     padding: 30px !important;
-}
-
-#th {
-    font-weight: bold;
 }
 
 .btnfile {
@@ -120,44 +64,38 @@ table th {
     border-radius: 0.5rem;
 }
 
-
-
-
-
 #myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
     display: block;
     margin-left: auto;
-    margin-right: auto
-  }
-  
-  #myImg:hover {opacity: 0.7;}
-  
-  /* The Modal (background) */
-  .modal {
+    margin-right: auto;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 250px; /* Location of the box */
     left: 0;
-    top:0;
+    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  
- 
-  
-  
-  /* Modal Content (image) */
-  .modal-content {
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 40%;
     max-width: 50%;
-  }
-  
+}

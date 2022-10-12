@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use DB;
+use DataTables;
 
 class AuthController extends Controller
 {
@@ -34,35 +35,43 @@ class AuthController extends Controller
         return view('dashboard');
     }
 
-    public function fetchtransaction(Request $request) {
-    
-        $from = date('Y-m-d', strtotime($request->from));
-        $to = date('Y-m-d', strtotime($request->to));
-        
-        if($from && $to){
-            $data['cheque'] = DB::table('chequedetails')
-            ->orderBy('created_at', 'desc')
-            ->whereBetween('depositdate', [$from, $to])     
-            ->get();
-        }
-
-        if($request->status) {
-            if($request->status == 'All') {
-                $data['cheque'] = DB::table('chequedetails')
-                ->orderBy('created_at', 'desc')
+    public function details(Request $request)
+    {
+        if(request()->ajax())
+        {
+            if(!empty($request->from_date))
+            {
+            $data = DB::table('chequedetails')
+                ->whereBetween('depositdate', array($request->from_date, $request->to_date))
                 ->get();
             }
-    
-            else {
-                $data['cheque'] = DB::table('chequedetails')
-                ->where('status', '=',  $request->status )
-                ->orderBy('created_at', 'desc')
+            else if(!empty($request->status)) {
+                if($request->status == 'All') {
+                    $data = DB::table('chequedetails')
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+                }
+        
+                else {
+                    $data = DB::table('chequedetails')
+                    ->where('status', '=',  $request->status )
+                    ->orderBy('created_at', 'desc')
+                    ->get();
+                }
+            }
+            else
+            {
+            $data = DB::table('chequedetails')
                 ->get();
             }
+            return datatables()->of($data)->addIndexColumn()
+            ->addColumn('action', function($row){
+                $actionBtn = '<div style="width: 12rem"> <a href="/updatechequedetail/'. $row->id .'" class="edit btn btn-success btn-sm">Edit</a> <a href="/chequedetail/'. $row->id .'" class="delete btn btn-secondary btn-sm">View</a> </div>';
+                return $actionBtn;
+            })
+            ->rawColumns(['action'])->make(true);
         }
-        
-        return response()->json($data);
-
+            return view('chequedetails');
     }
 
     public function updatechequedetail($id) {
