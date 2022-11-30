@@ -5,7 +5,7 @@
 @section('title_select','ADD')
 {{-- @section('title_select','Lead Update') --}}
 
-<div id="kt_app_content" class="app-content flex-column-fluid col-6 col-sm-6  col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+<div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
  <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->
     <div class="mt-10 mb-5 px-5">
@@ -57,9 +57,26 @@
 
         <div class="fv-row mb-8">
            
-            <input  type="text" placeholder="Pay To" name="payto" autocomplete="off"
+          <!--<input  type="text" placeholder="Pay To" name="payto" autocomplete="off"
                 class="form-control bg-transparent" value={{old('payto')}} >
+            <span class="text-danger">@error('payto') {{$message}} @enderror</span>-->
             <span class="text-danger">@error('payto') {{$message}} @enderror</span>
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Pay To</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="payto" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='naashik' selected>naashik</option>
+                <option value='akmal'>akmal</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
+            
            
         </div>
 
@@ -82,44 +99,115 @@
 
         <div class="fv-row mb-8">
             
-            <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdername')}} >
+          <!--   <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdername')}} > -->
             <span class="text-danger">@error('accountholdername') {{$message}} @enderror</span>
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Name</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="accountholdername" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='salman' selected>salman</option>
+                <option value='anas'>anas</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
             
         </div>
 
         <div class="fv-row mb-8">
            
-            <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdernumber')}}>
+            <!-- <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdernumber')}}> -->
             <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>
-           
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Number</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="accountholdernumber" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='00001' selected>00001</option>
+                <option value='00002'>00002</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
         </div>
 
-        <div class="fv-row mb-8 d-flex align-items-center">
+        <div class="fv-row mb-8">
            
-            <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
-                value={{old('chequenumber')}} >
+          <!--  <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
+                value={{old('chequenumber')}} > -->
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
-           
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Cheque Number</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="chequenumber" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='00110022' selected>00110022</option>
+                <option value='00110023'>00110023</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
         </div>
 
        
 
         <div class="fv-row mb-8">
            
-            <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('bankcode')}}>
+         <!--   <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
+                class="form-control bg-transparent" value={{old('bankcode')}}> -->
             <span class="text-danger">@error('bankcode') {{$message}} @enderror</span>
-          
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Bank Code</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="bankcode" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='052' selected>052</option>
+                <option value='053'>053</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
         </div>
 
         <div class="fv-row mb-8">
             
-            <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('branchcode')}}>
+        <!--    <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
+                class="form-control bg-transparent" value={{old('branchcode')}}> -->
             <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
-            
+            <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Branch Code</label>
+<div class="form-group">
+    
+    <label class="bg-transparent">
+        <div class="fw-bold" style="width: 11rem">
+            <select name="branchcode" class="form-control ms-2" style="-webkit-appearance: button;">         
+                <option value='001' selected>001</option>
+                <option value='002'>002</option>
+    
+            </select>
+        </div>
+    </label>
+</div> 
+</div> 
         </div>
 
   
