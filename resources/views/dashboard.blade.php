@@ -14,7 +14,7 @@
     </div>
     <!--begin::Content container-->
 
-    <form class="form w-100 px-5 " action="/store" method="post" enctype="multipart/form-data">
+    <form  class="form w-100 px-5 " action="/store" method="post" enctype="multipart/form-data">
         @if(Session::has('success'))
         <div class="alert alert-success">{{Session::get('success')}}</div>
         @endif
@@ -65,13 +65,17 @@
             <label class="me-6 form-control bg-transparent" for="">Pay To</label>
 <div class="form-group">
     
-    <label class="bg-transparent">
-        <div class="fw-bold" style="width: 11rem">
-            <select name="payto" class="form-control ms-2" style="-webkit-appearance: button;">         
-                <option value='naashik' selected>naashik</option>
-                <option value='akmal'>akmal</option>
-    
+<label class="d-flex bg-transparent ">
+        <div class="box fw-bold ">
+
+            <select name="payto" id="payto" class="form-control" style="width:11rem">
+            
+                @foreach($payto as $payto)
+                <option value='{{$payto->payto}}'>{{$payto->payto}}</option>
+                @endforeach
+
             </select>
+           
         </div>
     </label>
 </div> 
@@ -99,10 +103,10 @@
 
         <div class="fv-row mb-8">
             
-          <!--   <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdername')}} > -->
+          <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdername')}} > 
             <span class="text-danger">@error('accountholdername') {{$message}} @enderror</span>
-            <div class="d-flex fv-row mb-8">
+          <!--     <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Name</label>
 <div class="form-group">
     
@@ -116,16 +120,16 @@
         </div>
     </label>
 </div> 
-</div> 
+</div> -->
             
         </div>
 
         <div class="fv-row mb-8">
            
-            <!-- <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdernumber')}}> -->
+           <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdernumber')}}> 
             <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>
-            <div class="d-flex fv-row mb-8">
+           <!--   <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Number</label>
 <div class="form-group">
     
@@ -139,15 +143,15 @@
         </div>
     </label>
 </div> 
-</div> 
+</div> -->
         </div>
 
         <div class="fv-row mb-8">
            
-          <!--  <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
-                value={{old('chequenumber')}} > -->
+          <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
+                value={{old('chequenumber')}} >
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
-            <div class="d-flex fv-row mb-8">
+         <!--     <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Cheque Number</label>
 <div class="form-group">
     
@@ -161,17 +165,17 @@
         </div>
     </label>
 </div> 
-</div> 
+</div>  -->
         </div>
 
        
 
         <div class="fv-row mb-8">
            
-         <!--   <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('bankcode')}}> -->
+      <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
+                class="form-control bg-transparent" value={{old('bankcode')}}>
             <span class="text-danger">@error('bankcode') {{$message}} @enderror</span>
-            <div class="d-flex fv-row mb-8">
+           <!--       <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Bank Code</label>
 <div class="form-group">
     
@@ -185,14 +189,14 @@
         </div>
     </label>
 </div> 
-</div> 
+</div>  -->
         </div>
 
         <div class="fv-row mb-8">
             
-        <!--    <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('branchcode')}}> -->
-            <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
+          <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
+                class="form-control bg-transparent" value={{old('branchcode')}}>
+         <!--     <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
             <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Branch Code</label>
 <div class="form-group">
@@ -207,7 +211,7 @@
         </div>
     </label>
 </div> 
-</div> 
+</div>  -->
         </div>
 
   

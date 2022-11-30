@@ -321,6 +321,18 @@ License: For each use you must have a valid license purchased only from above li
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
+
+                                        <div class="menu-item">
+                                            <!--begin:Menu link-->
+                                            <a class="menu-link @yield('addcheque_select')"
+                                                href="/chequedata">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Add Cheque data</span>
+                                            </a>
+                                            <!--end:Menu link-->
+                                        </div>
                                         <!--end:Menu item-->
                                     </div>
                                     <!--end:Menu link-->

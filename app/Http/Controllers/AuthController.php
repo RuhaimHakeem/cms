@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Mail\OtpMail;
 use App\Models\Chequedetail;
+use App\Models\Payto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -31,10 +32,22 @@ class AuthController extends Controller
         return view('email');
     }
 
-    public function dashboard() {
+    public function dashboard(Request $request) {
+        $payto = DB::table('paytos')->get();
+   
+        return view('/dashboard', [
+            'payto' => $payto,
+    
+        ]);
+
+
+
         return view('dashboard');
     }
 
+    public function chequedata() {
+        return view('chequedata');
+    }
     public function details(Request $request)
     {
         if(request()->ajax())
@@ -270,6 +283,30 @@ class AuthController extends Controller
 
         if(isset($res)) {
             return back()->with('success',"Cheque details added");
+        }
+
+        else {
+            return back()->with('fail',"Something went wrong");
+        }
+    }
+
+    public function chequedatastore(Request $request){
+ 
+        $request->validate([
+            'payto'=>'required'
+        ]);
+            $payto = new Payto; 
+            $payto->payto = $request->payto;
+
+
+         
+            $res = $payto->save();
+             
+
+            
+
+        if(isset($res)) {
+            return back()->with('success',"Cheque data added");
         }
 
         else {

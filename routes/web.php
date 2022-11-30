@@ -28,6 +28,8 @@ Route::get('/email',[AuthController::class,'email'])->name('email');
 
 Route::get('/dashboard',[AuthController::class,'dashboard'])->name('dashboard')->middleware('isLoggedIn');
 
+Route::get('/chequedata',[AuthController::class,'chequedata'])->name('chequedata')->middleware('isLoggedIn');
+
 Route::get('/chequedetails',[AuthController::class,'chequedetails'])->name('chequedetails')->middleware('isLoggedIn');
 
 Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('chequedetail')->middleware('isLoggedIn');
@@ -39,6 +41,8 @@ Route::post('/updatecheque/{id}',[AuthController::class,'updatecheque'])->name('
 Route::post('/recaptcha',[AuthController::class,'recaptcha'])->name('recaptcha');
 
 Route::post('/store',[AuthController::class,'store'])->name('store');
+
+Route::post('/chequedatastore',[AuthController::class,'chequedatastore'])->name('chequedatastore');
 
 Route::post('/registeruser',[AuthController::class,'registeruser'])->name('registeruser');
 
