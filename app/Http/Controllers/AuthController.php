@@ -32,6 +32,7 @@ class AuthController extends Controller
         return view('email');
     }
 
+
     public function dashboard(Request $request) {
         $payto = DB::table('paytos')->get();
    
@@ -48,6 +49,20 @@ class AuthController extends Controller
     public function chequedata() {
         return view('chequedata');
     }
+    public function data(Request $request) {
+        if(request()->ajax())
+        {
+
+            $data = DB::table('paytos')
+            ->where('payto', '=',  $request->payto )
+            
+                ->get();
+            
+            return datatables()->of($data)->make(true);
+        }
+        return view('updatechequedata');
+    }
+
     public function details(Request $request)
     {
         if(request()->ajax())

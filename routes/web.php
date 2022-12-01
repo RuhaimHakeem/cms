@@ -30,6 +30,8 @@ Route::get('/dashboard',[AuthController::class,'dashboard'])->name('dashboard')-
 
 Route::get('/chequedata',[AuthController::class,'chequedata'])->name('chequedata')->middleware('isLoggedIn');
 
+Route::get('/updatechequedata',[AuthController::class,'updatechequedata'])->name('updatechequedata')->middleware('isLoggedIn');
+
 Route::get('/chequedetails',[AuthController::class,'chequedetails'])->name('chequedetails')->middleware('isLoggedIn');
 
 Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('chequedetail')->middleware('isLoggedIn');
@@ -55,3 +57,5 @@ Route::post('logout',[AuthController::class,'logout'])->name('logout');
 // Route::post('api/fetch-transaction', [AuthController::class, 'fetchtransaction']);
 
 Route::get('chequedetails', [AuthController::class, 'details'])->name('cheque.details');
+
+Route::get('updatechequedata', [AuthController::class, 'data'])->name('updatecheque.data');
