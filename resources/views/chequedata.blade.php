@@ -48,6 +48,39 @@
            
         </div>
 
+        <div class="fv-row mb-8">
+           
+            <input  type="text" placeholder="Account Holder Name" name="accountholdername" autocomplete="off"
+                  class="form-control bg-transparent" value={{old('accountholdername')}} >
+              <span class="text-danger">@error('accountholdername') {{$message}} @enderror</span>       
+             
+          </div>
+
+          <div class="fv-row mb-8">
+           
+            <input  type="text" placeholder="Account Holder Number" name="accountholdernumber" autocomplete="off"
+                  class="form-control bg-transparent" value={{old('accountholdernumber')}} >
+              <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>       
+             
+          </div>
+
+          <div class="fv-row mb-8">
+           
+            <input  type="text" placeholder="Cheque Number" name="chequenumber" autocomplete="off"
+                  class="form-control bg-transparent" value={{old('chequenumber')}} >
+              <span class="text-danger">@error('chequenumber') {{$message}} @enderror</span>       
+             
+          </div>
+
+          <div class="fv-row mb-8">
+           
+            <input  type="text" placeholder="Bank Name" name="bankname" autocomplete="off"
+                  class="form-control bg-transparent" value={{old('bankname')}} >
+              <span class="text-danger">@error('bankname') {{$message}} @enderror</span>       
+             
+          </div>
+
+
    
 <!--
         <div class="fv-row mb-8">

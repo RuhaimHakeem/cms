@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 
+use DB;
+use DataTables;
+use App\Models\Bank;
 use App\Models\User;
 use App\Mail\OtpMail;
-use App\Models\Chequedetail;
 use App\Models\Payto;
+use App\Models\Cheque;
+use App\Models\Account;
+use App\Models\Chequedetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
-use DB;
-use DataTables;
 
 class AuthController extends Controller
 {
@@ -34,8 +37,7 @@ class AuthController extends Controller
 
 
     public function dashboard(Request $request) {
-        $payto = DB::table('paytos')->get();
-   
+        $payto = Payto::where('payto','!=', null)->get();
         return view('/dashboard', [
             'payto' => $payto,
     
@@ -53,10 +55,7 @@ class AuthController extends Controller
         if(request()->ajax())
         {
 
-            $data = DB::table('paytos')
-            ->where('payto', '=',  $request->payto )
-            
-                ->get();
+            $data = Payto::where('payto','!=', null)->get();
             
             return datatables()->of($data)->make(true);
         }
@@ -307,20 +306,36 @@ class AuthController extends Controller
 
     public function chequedatastore(Request $request){
  
-        $request->validate([
-            'payto'=>'required'
-        ]);
+      
             $payto = new Payto; 
-            $payto->payto = $request->payto;
+            $accounts= new Account;
+            $banks= new Bank;
+            $cheques= new Cheque;
+            
+            if($request->payto) {
+                $payto->payto = $request->payto;
+                $res = $payto->save();
+            }
 
+            if($request->accountholdername || $request->accountholdernumber ) {
+                $accounts->accountholdername = $request->accountholdername;
+                $accounts->accountholdernumber = $request->accountholdernumber;
+                $resacc = $accounts->save();
+            }
 
-         
-            $res = $payto->save();
-             
+            if($request->chequenumber) {
+                $cheques->chequenumber = $request->chequenumber;
+                $rescheque = $cheques->save();
+            }
+
+            if($request->bankname) {
+                $banks->bankname = $request->bankname;
+                $resbank = $banks->save();
+            }
 
             
 
-        if(isset($res)) {
+        if(isset($res) || isset($resacc) ||  isset($rescheque) || isset($resbank) ) {
             return back()->with('success',"Cheque data added");
         }
 

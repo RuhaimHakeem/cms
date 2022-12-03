@@ -5,7 +5,7 @@
 @section('title_select','ADD CHEQUE DATA ')
 {{-- @section('title_select','Lead Update') --}}
 
-<div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+<div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-12 col-lg-12 col-xl-12 col-xxl-12">
  <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->
             @if(\Session::has('success'))
@@ -45,6 +45,9 @@
                         </div>
 
                         {{-- DataTable Start --}}
+
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
 
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
                         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
