@@ -86,6 +86,18 @@ class AuthController extends Controller
                     ->get();
                 }
             }
+            else if(!empty($request->keyword)) {
+                $data = DB::table('chequedetails')
+                ->where('accountholdername', 'like', '%'.$request->keyword.'%')
+                ->orWhere('payto', 'like', '%'.$request->keyword.'%')
+                ->orWhere('amount', 'like', '%'.$request->keyword.'%')
+                ->orWhere('accountholdernumber', 'like', '%'.$request->keyword.'%')
+                ->orWhere('chequenumber', 'like', '%'.$request->keyword.'%')
+                ->orWhere('bankcode', 'like', '%'.$request->keyword.'%')
+                ->orWhere('branchcode', 'like', '%'.$request->keyword.'%')
+                ->orWhere('status', 'like', '%'.$request->keyword.'%')
+                ->get();
+            }
             else
             {
             $data = DB::table('chequedetails')

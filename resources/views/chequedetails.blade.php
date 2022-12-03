@@ -23,7 +23,7 @@
 
         <div class="d-flex fv-row mb-8 w-25">
             <label class="me-6 form-control bg-transparent mx-5" style="width:5rem !important;font-weight:bold" for="">To</label>
-            <input class="form-control bg-transparent " type="date" id="to" name="to">
+            <input class="form-control bg-transparent" type="date" id="to" name="to">
         </div>
     </div>
     <button type="submit" id="search" class="btnfile"><i class="fa-solid fa-filter" style="color:white"></i>
@@ -35,8 +35,7 @@
     </button>
 </div>
 <label class="d-flex bg-transparent ">
-    <div class="box fw-bold ">
-                    
+    <div class="box fw-bold ">                   
         <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
             <option value='All'>All</option>
             <option value='In Hand'>In Hand</option>
@@ -45,6 +44,11 @@
          </select>
     </div>
 </label>
+<div>
+    <label class="d-flex bg-transparent" for="">Search</label>
+    <input class="form-control w-25" placeholder="Search cheque details" id="searchdata" type="search">
+    <button id="searchbtn" type="button">Search</button>
+</div>
  <div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
        style="padding-right:1rem">
            <a href="/dashboard"><button class="btnfile"> <i class="fa-solid fa-plus"
@@ -87,13 +91,13 @@ $(document).ready(function(e) {
 
     fetchtransaction();
 
-        function fetchtransaction(from = '', to = '', status = '') {
+        function fetchtransaction(from = '', to = '', status = '', keyword = '') {
             var table = $('.user_datatable').DataTable({
             processing: true,
             serverSide: true,
             ajax: {
                 url:'{{ route("cheque.details") }}',
-                data:{from_date:from, to_date:to, status:status}
+                data:{from_date:from, to_date:to, status:status, keyword: keyword}
                 },
             columns: [
             {data: 'accountholdername', name: 'accountholdername'},
@@ -106,6 +110,12 @@ $(document).ready(function(e) {
         ]
     });
     }
+
+    $('#searchdata').on('keyup', function(){
+        var keyword = $('#searchdata').val();
+        $('.user_datatable').DataTable().destroy();
+        fetchtransaction("","","",keyword);
+    });
 
     $('#search').click(function(){
         var from_date = $('#from').val();
@@ -133,7 +143,7 @@ $(document).ready(function(e) {
         var status = $('#status').val();
         if(status != '') {
             $('.user_datatable').DataTable().destroy();
-            fetchtransaction("","", status);
+            fetchtransaction("","", status, "");
         }
             
     });
