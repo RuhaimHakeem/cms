@@ -37,9 +37,19 @@ class AuthController extends Controller
 
 
     public function dashboard(Request $request) {
+        $id = Payto::where('id','!=', null)->get();
         $payto = Payto::where('payto','!=', null)->get();
+        $account = Account::where('accountholdername','!=', null)->get();
+        $accounts = Account::where('accountholdernumber','!=', null)->get();
+        $cheque = Cheque::where('chequenumber','!=', null)->get();
+        $bank = Bank::where('bankname','!=', null)->get();
         return view('/dashboard', [
+            'id' => $id,
             'payto' => $payto,
+            'accountholdername' => $account,
+            'accountholdernumber' => $accounts,
+            'chequenumber' => $cheque,
+            'bankname' => $bank,
     
         ]);
 
@@ -47,6 +57,22 @@ class AuthController extends Controller
 
         return view('dashboard');
     }
+
+
+    public function updatechequedata($id){
+
+        $payto = Payto::findOrFail($id);
+        $res = $payto->delete();
+  
+        if($res) {
+            return redirect('updatechequedata')->with('success','Lead deleted successfully');
+        }
+        else {
+            return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
+        }
+     }
+
+
 
     public function chequedata() {
         return view('chequedata');
@@ -56,11 +82,66 @@ class AuthController extends Controller
         {
 
             $data = Payto::where('payto','!=', null)->get();
+            $data = Payto::where('created_at','!=', null)->get();
+            $data = Payto::where('updated_at','!=', null)->get();
             
             return datatables()->of($data)->make(true);
         }
         return view('updatechequedata');
     }
+
+    public function data2(Request $request) {
+        if(request()->ajax())
+        {
+
+            $data2 = Account::where('accountholdername','!=', null)->get();
+            $data2 = Account::where('accountholdernumber','!=', null)->get();
+            $data2 = Account::where('created_at','!=', null)->get();
+            $data2 = Account::where('updated_at','!=', null)->get();
+            
+            return datatables()->of($data2)->make(true);
+        }
+        return view('updatechequedata');
+    }
+
+    public function data3(Request $request) {
+        if(request()->ajax())
+        {
+
+            $data3 = Cheque::where('chequenumber','!=', null)->get();
+            $data3 = Cheque::where('created_at','!=', null)->get();
+            $data3 = Cheque::where('updated_at','!=', null)->get();
+            
+            return datatables()->of($data3)->make(true);
+        }
+        return view('updatechequedata');
+    }
+
+    public function data4(Request $request) {
+        if(request()->ajax())
+        {
+
+            $data4 = Bank::where('bankname','!=', null)->get();
+            $data4 = Bank::where('created_at','!=', null)->get();
+            $data4 = Bank::where('updated_at','!=', null)->get();
+            
+            return datatables()->of($data4)->make(true);
+        }
+        return view('updatechequedata');
+    }
+
+    public function deletelead($id){
+
+        $payto = Payto::findOrFail($id);
+        $res = $payto->delete();
+  
+        if($res) {
+            return redirect('/updatechequedata')->with('success','Lead deleted successfully');
+        }
+        else {
+            return redirect('/updatechequedata')->with('fail','Something went wrong. Please try again');
+        }
+     }
 
     public function details(Request $request)
     {
@@ -93,8 +174,9 @@ class AuthController extends Controller
                 ->orWhere('amount', 'like', '%'.$request->keyword.'%')
                 ->orWhere('accountholdernumber', 'like', '%'.$request->keyword.'%')
                 ->orWhere('chequenumber', 'like', '%'.$request->keyword.'%')
-                ->orWhere('bankcode', 'like', '%'.$request->keyword.'%')
-                ->orWhere('branchcode', 'like', '%'.$request->keyword.'%')
+                ->orWhere('bankname', 'like', '%'.$request->keyword.'%')
+                ->orWhere('branchname', 'like', '%'.$request->keyword.'%')
+                ->orWhere('depositdate', 'like', '%'.$request->keyword.'%')
                 ->orWhere('status', 'like', '%'.$request->keyword.'%')
                 ->get();
             }
@@ -121,6 +203,7 @@ class AuthController extends Controller
         ]);
     }
 
+
     public function updatecheque(Request $request, $id) {
         
             $chequedetail =  Chequedetail::where('id','=', $id)->first();
@@ -131,8 +214,8 @@ class AuthController extends Controller
             $chequedetail->accountholdername = $request->accountholdername;
             $chequedetail->accountholdernumber = $request->accountholdernumber;
             $chequedetail->chequenumber = $request->chequenumber;
-            $chequedetail->bankcode = $request->bankcode;
-            $chequedetail->branchcode = $request->branchcode;
+            $chequedetail->bankname = $request->bankname;
+            $chequedetail->branchname = $request->branchname;
             $chequedetail->status = $request->status;
 
             if($request->file('image')){
@@ -276,6 +359,7 @@ class AuthController extends Controller
            
     }
 
+    
     public function store(Request $request) {
 
         if(!is_numeric($request->amount)) {
@@ -290,8 +374,8 @@ class AuthController extends Controller
             $chequedetail->accountholdername = $request->accountholdername;
             $chequedetail->accountholdernumber = $request->accountholdernumber;
             $chequedetail->chequenumber = $request->chequenumber;
-            $chequedetail->bankcode = $request->bankcode;
-            $chequedetail->branchcode = $request->branchcode;
+            $chequedetail->bankname = $request->bankname;
+            $chequedetail->branchname = $request->branchname;
             $chequedetail->status = $request->status;
 
             if($request->file('image')){

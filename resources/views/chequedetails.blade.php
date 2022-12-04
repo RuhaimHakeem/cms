@@ -34,6 +34,7 @@
         <!--end::Indicator progress-->
     </button>
 </div>
+<div class="d-flex">
 <label class="d-flex bg-transparent ">
     <div class="box fw-bold ">                   
         <select name="status" id="status" class="form-control m-5 box fw-bold" style="width:13rem">
@@ -44,10 +45,14 @@
          </select>
     </div>
 </label>
-<div>
-    <label class="d-flex bg-transparent" for="">Search</label>
-    <input class="form-control w-25" placeholder="Search cheque details" id="searchdata" type="search">
-    <button id="searchbtn" type="button">Search</button>
+
+<!-- SEARCH FUNCTION -->
+
+<!--<div>
+
+    <input class="form-control w-75" placeholder="Search" id="searchdata" type="search">
+
+</div>-->
 </div>
  <div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
        style="padding-right:1rem">
@@ -64,7 +69,7 @@
                     <tr>
                         <th>Account Holder Name</th>
                         <th>Paid To</th>
-                        <th>Bank Code</th>
+                        <th>Bank Name</th>
                         <th>Amount</th>
                         <th>Deposit Date</th>
                         <th>Status</th>
@@ -102,7 +107,7 @@ $(document).ready(function(e) {
             columns: [
             {data: 'accountholdername', name: 'accountholdername'},
             {data: 'payto', name: 'payto'},
-            {data: 'bankcode', name: 'bankcode'},
+            {data: 'bankname', name: 'bankname'},
             {data: 'amount', name: 'amount'},
             {data: 'depositdate', name: 'depositdate'},
             {data: 'status', name: 'status'},

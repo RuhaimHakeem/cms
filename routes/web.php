@@ -59,3 +59,13 @@ Route::post('logout',[AuthController::class,'logout'])->name('logout');
 Route::get('chequedetails', [AuthController::class, 'details'])->name('cheque.details');
 
 Route::get('updatechequedata', [AuthController::class, 'data'])->name('updatecheque.data');
+
+Route::get('updatechequedata2', [AuthController::class, 'data2'])->name('updatecheque2.data');
+
+Route::get('updatechequedata3', [AuthController::class, 'data3'])->name('updatecheque3.data');
+
+Route::get('updatechequedata4', [AuthController::class, 'data4'])->name('updatecheque4.data');
+
+
+
+Route::delete('updatechequedata/{id}', [AuthController::class, 'updatechequedata'])->name('updatechequedata');

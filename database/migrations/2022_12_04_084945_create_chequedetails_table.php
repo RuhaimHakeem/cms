@@ -22,8 +22,8 @@ class CreateChequedetailsTable extends Migration
             $table->string('accountholdername');
             $table->string('accountholdernumber'); 
             $table->string('chequenumber');   
-            $table->string('bankcode');  
-            $table->string('branchcode');
+            $table->string('bankname');  
+            $table->string('branchname');
             $table->string('image')->nullable(); 
             $table->string('status')->nullable(); 
             $table->timestamps();

@@ -103,107 +103,121 @@
 
         <div class="fv-row mb-8">
             
-          <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdername')}} > 
+     <!--      <input required type="text" placeholder="Enter Account Holder Name" name="accountholdername" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdername')}} > -->
             <span class="text-danger">@error('accountholdername') {{$message}} @enderror</span>
-          <!--     <div class="d-flex fv-row mb-8">
+              <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Name</label>
 <div class="form-group">
     
-    <label class="bg-transparent">
-        <div class="fw-bold" style="width: 11rem">
-            <select name="accountholdername" class="form-control ms-2" style="-webkit-appearance: button;">         
-                <option value='salman' selected>salman</option>
-                <option value='anas'>anas</option>
-    
+<label class="d-flex bg-transparent ">
+        <div class="box fw-bold ">
+
+            <select name="accountholdername" id="accountholdername" class="form-control" style="width:11rem">
+            
+                @foreach($accountholdername as $accountholdername)
+                <option value='{{$accountholdername->accountholdername}}'>{{$accountholdername->accountholdername}}</option>
+                @endforeach
+
             </select>
+           
         </div>
     </label>
 </div> 
-</div> -->
+</div> 
             
         </div>
 
         <div class="fv-row mb-8">
            
-           <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
-                class="form-control bg-transparent" value={{old('accountholdernumber')}}> 
+            <!--       <input required type="text" placeholder="Enter Account Holder Number" name="accountholdernumber" autocomplete="off"
+                class="form-control bg-transparent" value={{old('accountholdernumber')}}>  -->
             <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>
-           <!--   <div class="d-flex fv-row mb-8">
+      <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Account Holder Number</label>
 <div class="form-group">
     
-    <label class="bg-transparent">
-        <div class="fw-bold" style="width: 11rem">
-            <select name="accountholdernumber" class="form-control ms-2" style="-webkit-appearance: button;">         
-                <option value='00001' selected>00001</option>
-                <option value='00002'>00002</option>
-    
+<label class="d-flex bg-transparent ">
+        <div class="box fw-bold ">
+
+            <select name="accountholdernumber" id="accountholdernumber" class="form-control" style="width:11rem">
+            
+                @foreach($accountholdernumber as $accountholdernumber)
+                <option value='{{$accountholdernumber->accountholdernumber}}'>{{$accountholdernumber->accountholdernumber}}</option>
+                @endforeach
+
             </select>
+           
         </div>
     </label>
 </div> 
-</div> -->
+</div>
         </div>
 
         <div class="fv-row mb-8">
            
-          <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
-                value={{old('chequenumber')}} >
+         <!--    <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
+                value={{old('chequenumber')}} > -->
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
-         <!--     <div class="d-flex fv-row mb-8">
+           <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Cheque Number</label>
 <div class="form-group">
     
-    <label class="bg-transparent">
-        <div class="fw-bold" style="width: 11rem">
-            <select name="chequenumber" class="form-control ms-2" style="-webkit-appearance: button;">         
-                <option value='00110022' selected>00110022</option>
-                <option value='00110023'>00110023</option>
-    
+<label class="d-flex bg-transparent ">
+        <div class="box fw-bold ">
+
+            <select name="chequenumber" id="chequenumber" class="form-control" style="width:11rem">
+            
+                @foreach($chequenumber as $chequenumber)
+                <option value='{{$chequenumber->chequenumber}}'>{{$chequenumber->chequenumber}}</option>
+                @endforeach
+
             </select>
+           
         </div>
     </label>
 </div> 
-</div>  -->
+</div> 
         </div>
 
        
 
         <div class="fv-row mb-8">
            
-      <input required type="text" placeholder="Enter Bank Code" name="bankcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('bankcode')}}>
-            <span class="text-danger">@error('bankcode') {{$message}} @enderror</span>
-           <!--       <div class="d-flex fv-row mb-8">
-            <label class="me-6 form-control bg-transparent" for="">Enter Bank Code</label>
-<div class="form-group">
-    
-    <label class="bg-transparent">
-        <div class="fw-bold" style="width: 11rem">
-            <select name="bankcode" class="form-control ms-2" style="-webkit-appearance: button;">         
-                <option value='052' selected>052</option>
-                <option value='053'>053</option>
-    
+     <!--      <input required type="text" placeholder="Enter Bank Code" name="bankname" autocomplete="off"
+                class="form-control bg-transparent" value={{old('bankname')}}> -->
+            <span class="text-danger">@error('bankname') {{$message}} @enderror</span>
+             <div class="d-flex fv-row mb-8">
+            <label class="me-6 form-control bg-transparent" for="">Enter Bank Name</label>
+            <label class="d-flex bg-transparent ">
+        <div class="box fw-bold ">
+
+            <select name="bankname" id="bankname" class="form-control" style="width:11rem">
+            
+                @foreach($bankname as $bankname)
+                <option value='{{$bankname->bankname}}'>{{$bankname->bankname}}</option>
+                @endforeach
+
             </select>
+           
         </div>
     </label>
 </div> 
-</div>  -->
-        </div>
+</div> 
+       
 
         <div class="fv-row mb-8">
             
-          <input required type="text" placeholder="Enter Branch Code" name="branchcode" autocomplete="off"
-                class="form-control bg-transparent" value={{old('branchcode')}}>
-         <!--     <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
+          <input required type="text" placeholder="Enter Branch Name" name="branchname" autocomplete="off"
+                class="form-control bg-transparent" value={{old('branchname')}}>
+         <!--     <span class="text-danger">@error('branchname') {{$message}} @enderror</span>
             <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Branch Code</label>
 <div class="form-group">
     
     <label class="bg-transparent">
         <div class="fw-bold" style="width: 11rem">
-            <select name="branchcode" class="form-control ms-2" style="-webkit-appearance: button;">         
+            <select name="branchname" class="form-control ms-2" style="-webkit-appearance: button;">         
                 <option value='001' selected>001</option>
                 <option value='002'>002</option>
     
