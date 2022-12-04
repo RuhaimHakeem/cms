@@ -57,7 +57,15 @@
                 class="form-control bg-transparent" value={{$chequedetail->payto}} >
             <span class="text-danger">@error('payto') {{$message}} @enderror</span>
            
+
+
+            
         </div>
+
+
+
+
+        
 
         <div class="fv-row mb-8 d-flex align-items-center">
             <label class="me-6 form-control bg-transparent "  for="">Amount</label>
@@ -101,7 +109,7 @@
         </div>
 
         <div class="fv-row mb-8 d-flex">
-            <label class="me-6 form-control bg-transparent" for="">Bank Code</label>
+            <label class="me-6 form-control bg-transparent" for="">Bank Name</label>
             <input required type="text" placeholder="Bank Name" name="bankname" autocomplete="off"
                 class="form-control bg-transparent" value={{$chequedetail->bankname}}>
             <span class="text-danger">@error('bankname') {{$message}} @enderror</span>
@@ -109,7 +117,7 @@
         </div>
 
         <div class="fv-row mb-8 d-flex">
-            <label class="me-6 form-control bg-transparent" for="">Branch Code</label>
+            <label class="me-6 form-control bg-transparent" for="">Branch Name</label>
             <input required type="text" placeholder="Branch Name" name="branchname" autocomplete="off"
                 class="form-control bg-transparent" value={{$chequedetail->branchname}}>
             <span class="text-danger">@error('branchname') {{$message}} @enderror</span>
