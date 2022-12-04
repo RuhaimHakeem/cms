@@ -77,7 +77,7 @@
                                         {data: 'updated_at', name: 'updated_at'},
                                         {
                                             data: function(row) {
-                                                return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/updatelead/' + row.leadid + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.leadid) + ' </div>'
+                                                return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequedata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
                                             }
                                         }
                                         
@@ -127,6 +127,7 @@
         <table class="table table-bordered user_datatable2">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Account Holder Name</th>
                     <th>Account Holder Number</th>
                     <th>Created_at</th>
@@ -145,7 +146,9 @@
 
 <script type="text/javascript">
 
-
+function form(id) {
+                                return '<form method="POST" action="updatechequedata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
+                            } 
 
 $(document).ready(function(e) {
 
@@ -159,6 +162,7 @@ $(document).ready(function(e) {
                 url:'{{ route("updatecheque2.data") }}',
                 },
             columns: [
+            {data: 'id', name: 'id'},
             {data: 'accountholdername', name: 'accountholdername'},
             {data: 'accountholdernumber', name: 'accountholdernumber'},
             {data: 'created_at', name: 'created_at'},

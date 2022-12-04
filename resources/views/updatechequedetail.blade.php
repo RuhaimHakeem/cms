@@ -102,17 +102,17 @@
 
         <div class="fv-row mb-8 d-flex">
             <label class="me-6 form-control bg-transparent" for="">Bank Code</label>
-            <input required type="text" placeholder="Bank Code" name="bankcode" autocomplete="off"
-                class="form-control bg-transparent" value={{$chequedetail->bankcode}}>
-            <span class="text-danger">@error('bankcode') {{$message}} @enderror</span>
+            <input required type="text" placeholder="Bank Name" name="bankname" autocomplete="off"
+                class="form-control bg-transparent" value={{$chequedetail->bankname}}>
+            <span class="text-danger">@error('bankname') {{$message}} @enderror</span>
           
         </div>
 
         <div class="fv-row mb-8 d-flex">
             <label class="me-6 form-control bg-transparent" for="">Branch Code</label>
-            <input required type="text" placeholder="Branch Code" name="branchcode" autocomplete="off"
-                class="form-control bg-transparent" value={{$chequedetail->branchcode}}>
-            <span class="text-danger">@error('branchcode') {{$message}} @enderror</span>
+            <input required type="text" placeholder="Branch Name" name="branchname" autocomplete="off"
+                class="form-control bg-transparent" value={{$chequedetail->branchname}}>
+            <span class="text-danger">@error('branchname') {{$message}} @enderror</span>
             
         </div>
 

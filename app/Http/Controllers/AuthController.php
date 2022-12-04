@@ -35,6 +35,19 @@ class AuthController extends Controller
         return view('email');
     }
 
+    public function editchequedata($id) {
+ 
+        $payto = Payto::where('id','=', $id)->first();
+
+        return view('editchequedata', [
+            'payto' => $payto,
+        ]);
+
+      
+
+     
+    }
+
 
     public function dashboard(Request $request) {
         $id = Payto::where('id','!=', null)->get();
@@ -60,7 +73,8 @@ class AuthController extends Controller
 
 
     public function updatechequedata($id){
-
+      
+        $paytos = Payto::where('id','=', $id)->first();
         $payto = Payto::findOrFail($id);
         $res = $payto->delete();
   
@@ -72,6 +86,7 @@ class AuthController extends Controller
         }
      }
 
+     
 
 
     public function chequedata() {
@@ -204,6 +219,7 @@ class AuthController extends Controller
     }
 
 
+
     public function updatecheque(Request $request, $id) {
         
             $chequedetail =  Chequedetail::where('id','=', $id)->first();
@@ -238,6 +254,25 @@ class AuthController extends Controller
         }
     }
     
+    public function updatecheque2(Request $request, $id) {
+        
+        $payto =  Payto::where('id','=', $id)->first();
+        $payto->payto = $request->payto;
+      
+
+  
+    $res = $payto->update();
+
+        
+
+    if($res) {
+        return back()->with('success',"Cheque details updated");
+    }
+
+    else {
+        return back()->with('fail',"Something went wrong");
+    }
+}
 
     public function chequedetails() {
 

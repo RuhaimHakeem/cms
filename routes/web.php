@@ -32,6 +32,8 @@ Route::get('/chequedata',[AuthController::class,'chequedata'])->name('chequedata
 
 Route::get('/updatechequedata',[AuthController::class,'updatechequedata'])->name('updatechequedata')->middleware('isLoggedIn');
 
+Route::get('/editchequedata/{id}',[AuthController::class,'editchequedata'])->name('editchequedata')->middleware('isLoggedIn');
+
 Route::get('/chequedetails',[AuthController::class,'chequedetails'])->name('chequedetails')->middleware('isLoggedIn');
 
 Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('chequedetail')->middleware('isLoggedIn');
@@ -39,6 +41,8 @@ Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('c
 Route::get('/updatechequedetail/{id}',[AuthController::class,'updatechequedetail'])->name('updatechequedetail')->middleware('isLoggedIn');
 
 Route::post('/updatecheque/{id}',[AuthController::class,'updatecheque'])->name('updatecheque');
+
+Route::post('/updatecheque2/{id}',[AuthController::class,'updatecheque2'])->name('updatecheque2');
 
 Route::post('/recaptcha',[AuthController::class,'recaptcha'])->name('recaptcha');
 
@@ -68,4 +72,5 @@ Route::get('updatechequedata4', [AuthController::class, 'data4'])->name('updatec
 
 
 
-Route::delete('updatechequedata/{id}', [AuthController::class, 'updatechequedata'])->name('updatechequedata');
+Route::delete('/updatechequedata/{id}', [AuthController::class, 'updatechequedata'])->name('updatechequedata');
+
