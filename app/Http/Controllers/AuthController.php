@@ -115,7 +115,12 @@ class AuthController extends Controller
       
         $paytos = Payto::where('id','=', $id)->first();
         $payto = Payto::findOrFail($id);
+        $accounts = Account::where('id','=', $id)->first();
+        $account = Account::findOrFail($id);
+
+
         $res = $payto->delete();
+
   
         if($res) {
             return redirect('updatechequedata')->with('success','row deleted successfully');
@@ -123,6 +128,8 @@ class AuthController extends Controller
         else {
             return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
         }
+
+        
      }
 
 

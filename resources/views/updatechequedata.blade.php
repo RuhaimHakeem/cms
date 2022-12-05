@@ -146,9 +146,6 @@
 
 <script type="text/javascript">
 
-function form(id) {
-                                return '<form method="POST" action="updatechequedata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
-                            } 
 
 $(document).ready(function(e) {
 
