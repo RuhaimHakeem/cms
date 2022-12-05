@@ -46,12 +46,12 @@
                     <td>{{$chequedetail->chequenumber}}</td>
                 </tr>
                 <tr>
-                    <th id="th">Bank Code</th>
-                    <td>{{$chequedetail->bankcode}}</td>
+                    <th id="th">Bank Name</th>
+                    <td>{{$chequedetail->bankname}}</td>
                 </tr>
                 <tr>
-                    <th id="th">Branch Code</th>
-                    <td>{{$chequedetail->branchcode}}</td>
+                    <th id="th">Branch Name</th>
+                    <td>{{$chequedetail->branchname}}</td>
                 </tr>
 
                 <tr>
