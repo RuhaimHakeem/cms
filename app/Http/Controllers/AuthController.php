@@ -115,8 +115,7 @@ class AuthController extends Controller
       
         $paytos = Payto::where('id','=', $id)->first();
         $payto = Payto::findOrFail($id);
-        $accounts = Account::where('id','=', $id)->first();
-        $account = Account::findOrFail($id);
+
 
 
         $res = $payto->delete();
