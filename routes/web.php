@@ -34,6 +34,13 @@ Route::get('/updatechequedata',[AuthController::class,'updatechequedata'])->name
 
 Route::get('/editchequedata/{id}',[AuthController::class,'editchequedata'])->name('editchequedata')->middleware('isLoggedIn');
 
+Route::get('/editaccountdata/{id}',[AuthController::class,'editaccountdata'])->name('editaccountdata')->middleware('isLoggedIn');
+
+Route::get('/editchequenodata/{id}',[AuthController::class,'editchequenodata'])->name('editchequenodata')->middleware('isLoggedIn');
+
+Route::get('/editchequebankdata/{id}',[AuthController::class,'editchequebankdata'])->name('editchequebankdata')->middleware('isLoggedIn');
+
+
 Route::get('/chequedetails',[AuthController::class,'chequedetails'])->name('chequedetails')->middleware('isLoggedIn');
 
 Route::get('/chequedetail/{id}',[AuthController::class,'chequedetail'])->name('chequedetail')->middleware('isLoggedIn');
@@ -43,6 +50,12 @@ Route::get('/updatechequedetail/{id}',[AuthController::class,'updatechequedetail
 Route::post('/updatecheque/{id}',[AuthController::class,'updatecheque'])->name('updatecheque');
 
 Route::post('/updatecheque2/{id}',[AuthController::class,'updatecheque2'])->name('updatecheque2');
+
+Route::post('/updatecheque3/{id}',[AuthController::class,'updatecheque3'])->name('updatecheque3');
+
+Route::post('/updatecheque4/{id}',[AuthController::class,'updatecheque4'])->name('updatecheque4');
+
+Route::post('/updatecheque5/{id}',[AuthController::class,'updatecheque5'])->name('updatecheque5');
 
 Route::post('/recaptcha',[AuthController::class,'recaptcha'])->name('recaptcha');
 
@@ -73,4 +86,7 @@ Route::get('updatechequedata4', [AuthController::class, 'data4'])->name('updatec
 
 
 Route::delete('/updatechequedata/{id}', [AuthController::class, 'updatechequedata'])->name('updatechequedata');
+
+
+
 

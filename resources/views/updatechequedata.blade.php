@@ -169,7 +169,7 @@ $(document).ready(function(e) {
             {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
-                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/updatelead/' + row.leadid + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.leadid) + ' </div>'
+                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editaccountdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
                 }
             }
             
@@ -256,7 +256,7 @@ $(document).ready(function(e) {
             {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
-                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/updatelead/' + row.leadid + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.leadid) + ' </div>'
+                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequenodata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
                 }
             }
             
@@ -345,7 +345,7 @@ $(document).ready(function(e) {
             {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
-                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/updatelead/' + row.leadid + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.leadid) + ' </div>'
+                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequebankdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
                 }
             }
             

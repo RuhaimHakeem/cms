@@ -48,6 +48,45 @@ class AuthController extends Controller
      
     }
 
+    public function editaccountdata($id) {
+ 
+        $account = Account::where('id','=', $id)->first();
+
+        return view('editaccountdata', [
+            'account' => $account,
+        ]);
+
+      
+
+     
+    }
+
+    public function editchequenodata($id) {
+ 
+        $cheque = Cheque::where('id','=', $id)->first();
+
+        return view('editchequenodata', [
+            'cheque' => $cheque,
+        ]);
+
+      
+
+     
+    }
+
+    public function editchequebankdata($id) {
+ 
+        $bank = Bank::where('id','=', $id)->first();
+
+        return view('editchequebankdata', [
+            'bank' => $bank,
+        ]);
+
+      
+
+     
+    }
+
 
     public function dashboard(Request $request) {
         $id = Payto::where('id','!=', null)->get();
@@ -85,6 +124,8 @@ class AuthController extends Controller
             return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
         }
      }
+
+
 
      
 
@@ -274,6 +315,69 @@ class AuthController extends Controller
     }
 }
 
+public function updatecheque3(Request $request, $id) {
+        
+    $account =  Account::where('id','=', $id)->first();
+    $account->accountholdername = $request->accountholdername;
+    $account->accountholdernumber = $request->accountholdernumber;
+  
+
+
+$res = $account->update();
+
+    
+
+if($res) {
+    return back()->with('success'," Details Updated");
+}
+
+else {
+    return back()->with('fail',"Something went wrong");
+}
+}
+
+public function updatecheque4(Request $request, $id) {
+        
+    $cheque =  Cheque::where('id','=', $id)->first();
+    $cheque->chequenumber = $request->chequenumber;
+
+  
+
+
+$res = $cheque->update();
+
+    
+
+if($res) {
+    return back()->with('success'," Details Updated");
+}
+
+else {
+    return back()->with('fail',"Something went wrong");
+}
+}
+
+
+public function updatecheque5(Request $request, $id) {
+        
+    $bank =  Bank::where('id','=', $id)->first();
+    $bank->bankname = $request->bankname;
+
+  
+
+
+$res = $bank->update();
+
+    
+
+if($res) {
+    return back()->with('success'," Details Updated");
+}
+
+else {
+    return back()->with('fail',"Something went wrong");
+}
+}
     public function chequedetails() {
 
         $chequedetails = Chequedetail::orderBy('created_at', 'desc')->get();   
