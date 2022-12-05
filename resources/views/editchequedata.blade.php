@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-@section('addcheque_select','active')
+
 @section('drop_select','here show')
 @section('title_select','UPDATE CHEQUE DATA ')
 {{-- @section('title_select','Lead Update') --}}
