@@ -37,7 +37,7 @@
                                     <table class="table table-bordered user_datatable">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                         
                                                 <th>Pay To</th>
                                                 <th>Created At</th>
                                                 <th>Updated At</th>
@@ -71,7 +71,7 @@
                                             url:'{{ route("updatecheque.data") }}',
                                             },
                                         columns: [
-                                        {data: 'id', name: 'id'},
+                                 
                                         {data: 'payto', name: 'payto'},
                                         {data: 'created_at', name: 'created_at'},
                                         {data: 'updated_at', name: 'updated_at'},
@@ -127,7 +127,7 @@
         <table class="table table-bordered user_datatable2">
             <thead>
                 <tr>
-                    <th>Id</th>
+              
                     <th>Account Holder Name</th>
                     <th>Account Holder Number</th>
                     <th>Created_at</th>
@@ -162,7 +162,7 @@ $(document).ready(function(e) {
                 url:'{{ route("updatecheque2.data") }}',
                 },
             columns: [
-            {data: 'id', name: 'id'},
+
             {data: 'accountholdername', name: 'accountholdername'},
             {data: 'accountholdernumber', name: 'accountholdernumber'},
             {data: 'created_at', name: 'created_at'},
