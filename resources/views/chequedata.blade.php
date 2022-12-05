@@ -47,7 +47,7 @@
             
            
         </div>
-
+<hr>
         <div class="fv-row mb-8">
            
             <input  type="text" placeholder="Account Holder Name" name="accountholdername" autocomplete="off"
@@ -63,7 +63,7 @@
               <span class="text-danger">@error('accountholdernumber') {{$message}} @enderror</span>       
              
           </div>
-
+          <hr>
           <div class="fv-row mb-8">
            
             <input  type="text" placeholder="Cheque Number" name="chequenumber" autocomplete="off"

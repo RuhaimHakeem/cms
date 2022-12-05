@@ -317,7 +317,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Add</span>
+                                                <span class="menu-title">Add Cheque</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -329,7 +329,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Add Cheque data</span>
+                                                <span class="menu-title">Add Master data</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>
@@ -340,7 +340,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
-                                                <span class="menu-title">Update Cheque data</span>
+                                                <span class="menu-title">Update Master data</span>
                                             </a>
                                             <!--end:Menu link-->
                                         </div>

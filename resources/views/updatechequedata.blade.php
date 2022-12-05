@@ -14,10 +14,10 @@
  <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->
             @if(\Session::has('success'))
-                        <div class="alert alert-success w-25 mx-2">{{\Session::get('success')}}</div>
+                        <div class="alert alert-success w-25 mx-2 mt-10">{{\Session::get('success')}}</div>
                         @endif
                         @if(\Session::has('fail'))
-                        <div class="alert alert-danger w-25 mx-2">{{\Session::get('fail')}}</div>
+                        <div class="alert alert-danger w-25 mx-2 mt-10">{{\Session::get('fail')}}</div>
                         @endif
                         <div style="margin-left:20px" class="mb-5 mt-10">
 

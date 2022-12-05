@@ -128,7 +128,7 @@
 
         <div class="fv-row mb-8">
             <label><h4>Picture Of Cheque</h4></label>
-            <input type="file" name="image" class="form-control" >
+            <input type="file" name="image" class="form-control" value={{$chequedetail->image}}>
         </div>
 
     

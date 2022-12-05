@@ -41,7 +41,7 @@
         <div class="fv-row mb-8">
            
           <input  type="text" placeholder="Pay To(name)" name="payto" autocomplete="off"
-                class="form-control bg-transparent" value={{$payto->payto}}>
+                class="form-control bg-transparent" value="{{$payto->payto}}">
             <span class="text-danger">@error('payto') {{$message}} @enderror</span>
        
             

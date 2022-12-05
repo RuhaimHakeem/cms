@@ -79,7 +79,7 @@ class AuthController extends Controller
         $res = $payto->delete();
   
         if($res) {
-            return redirect('updatechequedata')->with('success','Lead deleted successfully');
+            return redirect('updatechequedata')->with('success','row deleted successfully');
         }
         else {
             return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
