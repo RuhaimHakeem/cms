@@ -2,7 +2,7 @@
 @section('content')
 @section('updateaddcheque_select','active')
 @section('drop_select','here show')
-@section('title_select','ADD CHEQUE DATA ')
+@section('title_select','UPDATE MASTER DATA ')
 {{-- @section('title_select','Lead Update') --}}
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
@@ -51,10 +51,12 @@
                         </div>
 
                         {{-- DataTable Start --}}
-
+                       <!-- function form(id) {
+                                return '<form method="POST" action="updatechequedata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
+                            } -->
                       
                             <script type="text/javascript">
-
+//function form
                             function form(id) {
                                 return '<form method="POST" action="updatechequedata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
                             } 

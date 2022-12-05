@@ -2,7 +2,7 @@
 @section('content')
 @section('add_select','active')
 @section('drop_select','here show')
-@section('title_select','ADD')
+@section('title_select','ADD CHEQUE')
 {{-- @section('title_select','Lead Update') --}}
 
 <div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">

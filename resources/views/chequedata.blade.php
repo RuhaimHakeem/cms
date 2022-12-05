@@ -2,7 +2,7 @@
 @section('content')
 @section('addcheque_select','active')
 @section('drop_select','here show')
-@section('title_select','ADD CHEQUE DATA ')
+@section('title_select','ADD MASTER DATA ')
 {{-- @section('title_select','Lead Update') --}}
 
 <div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
@@ -10,7 +10,7 @@
             style="color:white;margin-top:0.2rem"></i></button> -->
     <div class="mt-10 mb-5 px-5">
 
-        <h2 style="font-size:20px">ADD CHEQUE DATA</h2>
+        <h2 style="font-size:20px">ADD MASTER DATA</h2>
     </div>
     <!--begin::Content container-->
 
