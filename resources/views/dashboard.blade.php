@@ -156,10 +156,10 @@
 
         <div class="fv-row mb-8">
            
-         <!--    <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
-                value={{old('chequenumber')}} > -->
+           <input required type="text" placeholder="Enter Cheque Number" name="chequenumber" autocomplete="off" class="form-control bg-transparent"
+                value={{old('chequenumber')}} > 
             <span class="text-danger">@error('amount') {{$message}} @enderror</span>
-           <div class="d-flex fv-row mb-8">
+   <!--          <div class="d-flex fv-row mb-8">
             <label class="me-6 form-control bg-transparent" for="">Enter Cheque Number</label>
 <div class="form-group">
     
@@ -177,7 +177,7 @@
         </div>
     </label>
 </div> 
-</div> 
+</div> -->
         </div>
 
        

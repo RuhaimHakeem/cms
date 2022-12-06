@@ -57,10 +57,9 @@
                       
                             <script type="text/javascript">
 //function form
-                            function form(id) {
+function form(id) {
                                 return '<form method="POST" action="updatechequedata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
-                            } 
-
+                            }
                             $(document).ready(function(e) {
 
                                 fetchtransaction();  
@@ -199,17 +198,14 @@ $(document).ready(function(e) {
 </script>
 {{-- DataTable End --}}
 
-
+<!--
 
 <div style="margin-left:20px" class="mb-5">
 
 <h2 style="font-size:20px">CHEQUE DETAILS</h2>
 
 
-<!--end::Title-->
-<!--begin::Subtitle-->
 
-<!--end::Subtitle=-->
 </div>
 
 
@@ -285,7 +281,7 @@ $(document).ready(function(e) {
 });
 </script>
 {{-- DataTable End --}}
-
+-->
 
 
 

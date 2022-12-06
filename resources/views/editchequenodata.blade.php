@@ -5,8 +5,8 @@
 {{-- @section('title_select','Cheque Update') --}}
 
 <div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
- <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
-            style="color:white;margin-top:0.2rem"></i></button> -->
+   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
+            style="color:white;margin-top:0.2rem"></i></button>
     <div class="mt-10 mb-5 px-5">
 
         <h2 style="font-size:20px">UPDATE CHEQUE DATA</h2>

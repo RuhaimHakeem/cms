@@ -8,6 +8,9 @@
 <div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-4 col-lg-4 col-xl-4 col-xxl-4">
  <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->
+
+            <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
+            style="color:white;margin-top:0.2rem"></i></button>
     <div class="mt-10 mb-5 px-5">
 
         <h2 style="font-size:20px">ADD MASTER DATA</h2>
@@ -64,13 +67,13 @@
              
           </div>
           <hr>
-          <div class="fv-row mb-8">
+        <!--  <div class="fv-row mb-8">
            
             <input  type="text" placeholder="Cheque Number" name="chequenumber" autocomplete="off"
                   class="form-control bg-transparent" value={{old('chequenumber')}} >
               <span class="text-danger">@error('chequenumber') {{$message}} @enderror</span>       
              
-          </div>
+          </div> -->
 
           <div class="fv-row mb-8">
            
