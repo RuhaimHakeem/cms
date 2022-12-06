@@ -131,8 +131,8 @@ function form(id) {
               
                     <th>Account Holder Name</th>
                     <th>Account Holder Number</th>
-                    <th>Created_at</th>
-                    <th>Updated_at</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -146,6 +146,9 @@ function form(id) {
 
 
 <script type="text/javascript">
+    function form2(id) {
+            return '<form method="POST" action="updateaccountdata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
+        }
 
 
 $(document).ready(function(e) {
@@ -167,7 +170,7 @@ $(document).ready(function(e) {
             {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
-                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editaccountdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
+                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editaccountdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form2(row.id) + ' </div>'
                 }
             }
             
@@ -305,8 +308,8 @@ $(document).ready(function(e) {
             <thead>
                 <tr>
                     <th>Bank Name</th>
-                    <th>Created_at</th>
-                    <th>Updated_at</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -320,7 +323,9 @@ $(document).ready(function(e) {
 
 
 <script type="text/javascript">
-
+    function form3(id) {
+            return '<form method="POST" action="updatebankdata/' + id + ' "> @csrf @method("delete")<a class="btndelete btn btn-danger btn-sm show_confirm" style= title="Delete" id="show_confirm" data-toggle="tooltip"> Delete </a> </form>'
+        }
 
 
 $(document).ready(function(e) {
@@ -340,7 +345,7 @@ $(document).ready(function(e) {
             {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
-                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequebankdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
+                    return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequebankdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form3(row.id) + ' </div>'
                 }
             }
             

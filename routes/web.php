@@ -86,7 +86,8 @@ Route::get('updatechequedata4', [AuthController::class, 'data4'])->name('updatec
 
 
 Route::delete('/updatechequedata/{id}', [AuthController::class, 'updatechequedata'])->name('updatechequedata');
-
+Route::delete('/updateaccountdata/{id}', [AuthController::class, 'updateaccountdata'])->name('updateaccountdata');
+Route::delete('/updatebankdata/{id}', [AuthController::class, 'updatebankdata'])->name('updatebankdata');
 
 
 

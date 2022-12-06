@@ -131,6 +131,39 @@ class AuthController extends Controller
         
      }
 
+     public function updateaccountdata($id){
+      
+        $account = Account::where('id','=', $id)->first();
+
+        $res = $account->delete();
+
+  
+        if($res) {
+            return redirect('updatechequedata')->with('success','row deleted successfully');
+        }
+        else {
+            return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
+        }
+
+        
+     }
+     public function updatebankdata($id){
+      
+        $bank = Bank::where('id','=', $id)->first();
+
+        $res = $bank->delete();
+
+  
+        if($res) {
+            return redirect('updatechequedata')->with('success','row deleted successfully');
+        }
+        else {
+            return redirect('updatechequedata')->with('fail','Something went wrong. Please try again');
+        }
+
+        
+     }
+
 
 
      
