@@ -10,7 +10,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+<div id="kt_app_content" class="app-content flex-column-fluid col-8 col-sm-8  col-md-8 col-lg-8 col-xl-8 col-xxl-8">
  <!--   <button onclick="history.back()" class="btnback mx-5 mt-5"><i class="fa-solid fa-angles-left"
             style="color:white;margin-top:0.2rem"></i></button> -->
             @if(\Session::has('success'))
@@ -39,8 +39,6 @@
                                             <tr>
                                          
                                                 <th>Pay To</th>
-                                                <th>Created At</th>
-                                                <th>Updated At</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -74,8 +72,6 @@ function form(id) {
                                         columns: [
                                  
                                         {data: 'payto', name: 'payto'},
-                                        {data: 'created_at', name: 'created_at'},
-                                        {data: 'updated_at', name: 'updated_at'},
                                         {
                                             data: function(row) {
                                                 return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequedata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form(row.id) + ' </div>'
@@ -131,8 +127,6 @@ function form(id) {
               
                     <th>Account Holder Name</th>
                     <th>Account Holder Number</th>
-                    <th>Created at</th>
-                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -166,8 +160,6 @@ $(document).ready(function(e) {
 
             {data: 'accountholdername', name: 'accountholdername'},
             {data: 'accountholdernumber', name: 'accountholdernumber'},
-            {data: 'created_at', name: 'created_at'},
-            {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
                     return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editaccountdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form2(row.id) + ' </div>'
@@ -308,8 +300,6 @@ $(document).ready(function(e) {
             <thead>
                 <tr>
                     <th>Bank Name</th>
-                    <th>Created at</th>
-                    <th>Updated at</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -341,8 +331,6 @@ $(document).ready(function(e) {
                 },
             columns: [
             {data: 'bankname', name: 'bankname'},
-            {data: 'created_at', name: 'created_at'},
-            {data: 'updated_at', name: 'updated_at'},
             {
                 data: function(row) {
                     return  '<div style="display:flex; flex-wrap: no-wrap; align-items:center"><a href="/editchequebankdata/' + row.id + '" class="edit btn btn-secondary btn-sm mx-4">Update</a> ' + form3(row.id) + ' </div>'
