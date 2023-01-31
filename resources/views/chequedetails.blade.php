@@ -48,11 +48,11 @@
 
 <!-- SEARCH FUNCTION -->
 
-<!--<div>
+<div>
 
     <input class="form-control w-75" placeholder="Search" id="searchdata" type="search">
 
-</div>-->
+</div>
 </div>
  <div class="d-flex justify-content-end col-11 col-sm-11  col-md-11 col-lg-11 col-xl-11 col-xxl-11"
        style="padding-right:1rem">
